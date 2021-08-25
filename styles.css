@@ -27,6 +27,12 @@ body {
   margin: 5px;
 }
 
+.battleship-headers {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
 .battleship-game {
   display: flex;
   justify-content: space-around;
@@ -34,27 +40,60 @@ body {
   height: 60%;
   align-items: center;
 }
+.battleship-game__start-game-button {
+  width: 100px;
+  height: 50px;
+}
 .battleship-game__Player-grid, .battleship-game__Guess-grid {
   display: grid;
   grid-template-columns: repeat(11, auto);
   grid-template-rows: repeat(11, auto);
-  grid-gap: 10px;
+  grid-gap: 5px;
   text-align: center;
   border: 2px solid white;
   background: linear-gradient(#A7ABB7, #95AECC);
   padding: 10px;
   border-radius: 15px;
 }
-
-.labels {
+.battleship-game__Player-grid__buttons, .battleship-game__Guess-grid__buttons {
+  width: 30px;
+  height: 30px;
+}
+.battleship-game__Player-grid__labels, .battleship-game__Guess-grid__labels {
   text-align: center;
   width: 30px;
   height: 30px;
   display: flex;
   align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.battleship-game__info {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.battleship-game__info__start-game-button {
+  font-size: 30px;
+  height: auto;
+  width: auto;
+  border: 5px solid transparent;
+  border-radius: 20px;
+  padding: 10px;
+  font-weight: bold;
+  background: linear-gradient(#0BCE83, #0BCE83) padding-box, linear-gradient(#A7ABB7, #95AECC) border-box;
+  margin-top: 10px;
+}
+.battleship-game__info__start-game-button:hover {
+  opacity: 80%;
+  transform: scale(1.1, 1.1);
 }
 
-.buttons {
-  width: 30px;
-  height: 30px;
+.ship-location-choice {
+  background-color: grey;
 }

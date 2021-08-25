@@ -27,36 +27,80 @@ body {
   }
 }
 
+.battleship-headers {
+  display: flex; 
+  justify-content: space-around;
+  width: 100%; 
+}
+
 .battleship-game {
   display: flex;
   justify-content: space-around; 
   width: 100%; 
   height: 60%; 
   align-items: center;
+  &__start-game-button {
+    width: 100px; 
+    height: 50px; 
+  }
   &__Player-grid, &__Guess-grid {
     display: grid; 
     grid-template-columns: repeat(11, auto); 
     grid-template-rows: repeat(11, auto); 
-    grid-gap: 10px; 
+    grid-gap: 5px; 
     text-align: center; 
     border: 2px solid white;
     background: linear-gradient(#A7ABB7, #95AECC); 
     padding: 10px; 
     border-radius: 15px;  
   }
+  &__Player-grid__buttons, &__Guess-grid__buttons {
+    width: 30px; 
+    height: 30px;
+  }
+  &__Player-grid__labels, &__Guess-grid__labels {
+    text-align: center; 
+    width: 30px; 
+    height: 30px;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    font-weight: bold; 
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;  
+  }
+  &__info {
+    display: flex; 
+    justify-content: space-around; 
+    align-items: center; 
+    flex-direction: column; 
+    text-align: center; 
+    margin-right: 10px; 
+    margin-left: 10px;
+    &__start-game-button {
+      font-size: 30px;  
+      height: auto; 
+      width: auto; 
+      border: 5px solid transparent; 
+      border-radius: 20px;
+      padding: 10px;  
+      font-weight: bold;
+      background: linear-gradient(#0BCE83, #0BCE83) padding-box, linear-gradient(#A7ABB7, #95AECC) border-box;  
+      margin-top: 10px; 
+    }
+    &__start-game-button:hover {
+      opacity: 80%;
+      transform: scale(1.1,1.1); 
+    }    
+  }
 }
 
-.labels {
-  text-align: center; 
-  width: 30px; 
-  height: 30px;
-  display: flex; 
-  align-items: center;  
+// For use with JS toggles 
+
+.ship-location-choice {
+  background-color: grey; 
 }
 
-.buttons {
-  width: 30px; 
-  height: 30px;
-}
+
+
 
 

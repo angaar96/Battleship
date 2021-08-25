@@ -14,256 +14,267 @@
     <h1 class = "battleship-title__text"> BATTLESHIP </h1>
     <i class="ri-ship-line battleship-title__icon-2"></i>
   </div>
+  <div class = "battleship-headers"> 
+    <h2>Your Board</h2> 
+    <h2>Your Guesses</h2>
+  </div>
   <section class = "battleship-game">
     <div class = "battleship-game__Player-grid">
-      <div class = "battleship-game__Player-grid__label-0"> </div> <!-- This is just here to fill in the corner space -->
-      <div class = "battleship-game__Player-grid__label-1"> 1 </div>
-      <div class = "battleship-game__Player-grid__label-2"> 2 </div>
-      <div class = "battleship-game__Player-grid__label-3"> 3 </div>
-      <div class = "battleship-game__Player-grid__label-4"> 4 </div>
-      <div class = "battleship-game__Player-grid__label-5"> 5 </div>
-      <div class = "battleship-game__Player-grid__label-6"> 6 </div>
-      <div class = "battleship-game__Player-grid__label-7"> 7 </div>
-      <div class = "battleship-game__Player-grid__label-8"> 8 </div>
-      <div class = "battleship-game__Player-grid__label-9"> 9 </div>
-      <div class = "battleship-game__Player-grid__label-10"> 10 </div>
-      <div class = "battleship-game__Player-grid__label-A labels"> A </div>
-      <button id ="battleship-game__Player-grid__A1" class ="battleship-game__Player-grid__A1 buttons"> A1 </button>
-      <button id ="battleship-game__Player-grid__A2" class ="battleship-game__Player-grid__A2 buttons"> </button>
-      <button id ="battleship-game__Player-grid__A3" class = "battleship-game__Player-grid__A3 buttons"> </button>
-      <button id ="battleship-game__Player-grid__A4" class = "battleship-game__Player-grid__A4 buttons" > </button>
-      <button id ="battleship-game__Player-grid__A5" class = "battleship-game__Player-grid__A5 buttons"> A5 </button>
-      <button id ="battleship-game__Player-grid__A6" class = "battleship-game__Player-grid__A6 buttons"> </button>
-      <button id ="battleship-game__Player-grid__A7" class = "battleship-game__Player-grid__A7 buttons"> </button>
-      <button id ="battleship-game__Player-grid__A8" class = "battleship-game__Player-grid__A8 buttons"> </button>
-      <button id ="battleship-game__Player-grid__A9" class = "battleship-game__Player-grid__A9 buttons" > </button>
-      <button id ="battleship-game__Player-grid__A10" class = "battleship-game__Player-grid__A10 buttons"> A10 </button>
-      <div class = "battleship-game__Player-grid__label-B labels"> B </div>
-      <button id ="battleship-game__Player-grid__B1" class = "battleship-game__Player-grid__B1 buttons" > B1</button>
-      <button id ="battleship-game__Player-grid__B2" class = "battleship-game__Player-grid__B2 buttons"> </button>
-      <button id ="battleship-game__Player-grid__B3" class = "battleship-game__Player-grid__B3 buttons"> </button>
-      <button id ="battleship-game__Player-grid__B4" class = "battleship-game__Player-grid__B4 buttons"> </button>
-      <button id ="battleship-game__Player-grid__B5" class = "battleship-game__Player-grid__B5 buttons"> B5 </button>
-      <button id ="battleship-game__Player-grid__B6" class = "battleship-game__Player-grid__B6 buttons" > </button>
-      <button id ="battleship-game__Player-grid__B7" class = "battleship-game__Player-grid__B7 buttons"> </button>
-      <button id ="battleship-game__Player-grid__B8" class = "battleship-game__Player-grid__B8 buttons"> </button>
-      <button id ="battleship-game__Player-grid__B9" class = "battleship-game__Player-grid__B9 buttons"> </button>
-      <button id ="battleship-game__Player-grid__B10" class = "battleship-game__Player-grid__B10 buttons"> B10 </button>
-      <div class = "battleship-game__Player-grid__label-C labels"> C </div>
-      <button id ="battleship-game__Player-grid__C1" class = "battleship-game__Player-grid__C1 buttons"> C1</button>
-      <button id ="battleship-game__Player-grid__C2" class = "battleship-game__Player-grid__C2 buttons"> </button>
-      <button id ="battleship-game__Player-grid__C3" class = "battleship-game__Player-grid__C3 buttons"> </button>
-      <button id ="battleship-game__Player-grid__C4" class = "battleship-game__Player-grid__C4 buttons"> </button>
-      <button id ="battleship-game__Player-grid__C5" class = "battleship-game__Player-grid__C5 buttons"> C5</button>
-      <button id ="battleship-game__Player-grid__C6" class = "battleship-game__Player-grid__C6 buttons"> </button>
-      <button id ="battleship-game__Player-grid__C7" class = "battleship-game__Player-grid__C7 buttons"> </button>
-      <button id ="battleship-game__Player-grid__C8" class = "battleship-game__Player-grid__C8 buttons"> </button>
-      <button id ="battleship-game__Player-grid__C9" class = "battleship-game__Player-grid__C9 buttons"> </button>
-      <button id ="battleship-game__Player-grid__C10" class = "battleship-game__Player-grid__C10 buttons">C10 </button>
-      <div class = "battleship-game__Player-grid__label-D labels"> D </div>
-      <button id ="battleship-game__Player-grid__D1" class = "battleship-game__Player-grid__D1 buttons"> D1</button>
-      <button id ="battleship-game__Player-grid__D2" class = "battleship-game__Player-grid__D2 buttons"> </button>
-      <button id ="battleship-game__Player-grid__D3" class = "battleship-game__Player-grid__D3 buttons"> </button>
-      <button id ="battleship-game__Player-grid__D4" class = "battleship-game__Player-grid__D4 buttons"> </button>
-      <button id ="battleship-game__Player-grid__D5" class = "battleship-game__Player-grid__D5 buttons" > D5</button>
-      <button id ="battleship-game__Player-grid__D6" class = "battleship-game__Player-grid__D6 buttons"> </button>
-      <button id ="battleship-game__Player-grid__D7" class = "battleship-game__Player-grid__D7 buttons"> </button>
-      <button id ="battleship-game__Player-grid__D8" class = "battleship-game__Player-grid__D8 buttons"> </button>
-      <button id ="battleship-game__Player-grid__D9" class = "battleship-game__Player-grid__D9 buttons"> </button>
-      <button id ="battleship-game__Player-grid__D10" class = "battleship-game__Player-grid__D10 buttons">D10 </button>
-      <div class = "battleship-game__Player-grid__label-E labels"> E </div>
-      <button id ="battleship-game__Player-grid__E1" class = "battleship-game__Player-grid__E1 buttons"> E1</button>
-      <button id ="battleship-game__Player-grid__E2" class = "battleship-game__Player-grid__E2 buttons"> </button>
-      <button id ="battleship-game__Player-grid__E3" class = "battleship-game__Player-grid__E3 buttons" > </button>
-      <button id ="battleship-game__Player-grid__E4" class = "battleship-game__Player-grid__E4 buttons"> </button>
-      <button id ="battleship-game__Player-grid__E5" class = "battleship-game__Player-grid__E5 buttons">E5 </button>
-      <button id ="battleship-game__Player-grid__E6" class = "battleship-game__Player-grid__E6 buttons"> </button>
-      <button id ="battleship-game__Player-grid__E7" class = "battleship-game__Player-grid__E7 buttons"> </button>
-      <button id ="battleship-game__Player-grid__E8" class = "battleship-game__Player-grid__E8 buttons"> </button>
-      <button id ="battleship-game__Player-grid__E9" class = "battleship-game__Player-grid__E9 buttons"> </button>
-      <button id ="battleship-game__Player-grid__E10" class = "battleship-game__Player-grid__E10 buttons">E10 </button>
-      <div class = "battleship-game__Player-grid__label-F labels"> F </div>
-      <button id ="battleship-game__Player-grid__F1" class = "battleship-game__Player-grid__F1 buttons">F1 </button>
-      <button id ="battleship-game__Player-grid__F2" class = "battleship-game__Player-grid__F2 buttons"> </button>
-      <button id ="battleship-game__Player-grid__F3" class = "battleship-game__Player-grid__F3 buttons"> </button>
-      <button id ="battleship-game__Player-grid__F4" class = "battleship-game__Player-grid__F4 buttons"> </button>
-      <button id ="battleship-game__Player-grid__F5" class = "battleship-game__Player-grid__F5 buttons">F5 </button>
-      <button id ="battleship-game__Player-grid__F6" class = "battleship-game__Player-grid__F6 buttons"> </button>
-      <button id ="battleship-game__Player-grid__F7" class = "battleship-game__Player-grid__F7 buttons"> </button>
-      <button id ="battleship-game__Player-grid__F8" class = "battleship-game__Player-grid__F8 buttons"> </button>
-      <button id ="battleship-game__Player-grid__F9" class = "battleship-game__Player-grid__F9 buttons"> </button>
-      <button id ="battleship-game__Player-grid__F10" class = "battleship-game__Player-grid__F10 buttons">F10 </button>
-      <div class = "battleship-game__Player-grid__label-G labels"> G </div>
-      <button id ="battleship-game__Player-grid__G1" class = "battleship-game__Player-grid__G1 buttons">G1 </button>
-      <button id ="battleship-game__Player-grid__G2" class = "battleship-game__Player-grid__G2 buttons"> </button>
-      <button id ="battleship-game__Player-grid__G3" class = "battleship-game__Player-grid__G3 buttons"> </button>
-      <button id ="battleship-game__Player-grid__G4" class = "battleship-game__Player-grid__G4 buttons"> </button>
-      <button id ="battleship-game__Player-grid__G5" class = "battleship-game__Player-grid__G5 buttons">G5 </button>
-      <button id ="battleship-game__Player-grid__G6" class = "battleship-game__Player-grid__G6 buttons"> </button>
-      <button id ="battleship-game__Player-grid__G7" class = "battleship-game__Player-grid__G7 buttons"> </button>
-      <button id ="battleship-game__Player-grid__G8" class = "battleship-game__Player-grid__G8 buttons"> </button>
-      <button id ="battleship-game__Player-grid__G9" class = "battleship-game__Player-grid__G9 buttons"> </button>
-      <button id ="battleship-game__Player-grid__G10" class = "battleship-game__Player-grid__G10 buttons" >G10 </button>
-      <div class = "battleship-game__Player-grid__label-H labels"> H </div>
-      <button id ="battleship-game__Player-grid__H1" class = "battleship-game__Player-grid__H1 buttons">H1 </button>
-      <button id ="battleship-game__Player-grid__H2" class = "battleship-game__Player-grid__H2 buttons"> </button>
-      <button id ="battleship-game__Player-grid__H3" class = "battleship-game__Player-grid__H3 buttons"> </button>
-      <button id ="battleship-game__Player-grid__H4" class = "battleship-game__Player-grid__H4 buttons"> </button>
-      <button id ="battleship-game__Player-grid__H5" class = "battleship-game__Player-grid__H5 buttons">H5 </button>
-      <button id ="battleship-game__Player-grid__H6" class = "battleship-game__Player-grid__H6 buttons"> </button>
-      <button id ="battleship-game__Player-grid__H7" class = "battleship-game__Player-grid__H7 buttons"> </button>
-      <button id ="battleship-game__Player-grid__H8" class = "battleship-game__Player-grid__H8 buttons"> </button>
-      <button id ="battleship-game__Player-grid__H9" class = "battleship-game__Player-grid__H9 buttons"> </button>
-      <button id ="battleship-game__Player-grid__H10" class = "battleship-game__Player-grid__H10 buttons">H10 </button>
-      <div class = "battleship-game__Player-grid__label-I labels"> I </div>
-      <button id ="battleship-game__Player-grid__I1" class = "battleship-game__Player-grid__I1 buttons">I1 </button>
-      <button id ="battleship-game__Player-grid__I2" class = "battleship-game__Player-grid__I2 buttons" > </button>
-      <button id ="battleship-game__Player-grid__I3" class = "battleship-game__Player-grid__I3 buttons"> </button>
-      <button id ="battleship-game__Player-grid__I4" class = "battleship-game__Player-grid__I4 buttons"> </button>
-      <button id ="battleship-game__Player-grid__I5" class = "battleship-game__Player-grid__I5 buttons">I5 </button>
-      <button id ="battleship-game__Player-grid__I6" class = "battleship-game__Player-grid__I6 buttons"> </button>
-      <button id ="battleship-game__Player-grid__I7" class = "battleship-game__Player-grid__I7 buttons" > </button>
-      <button id ="battleship-game__Player-grid__I8" class = "battleship-game__Player-grid__I8 buttons"> </button>
-      <button id ="battleship-game__Player-grid__I9" class = "battleship-game__Player-grid__I9 buttons"> </button>
-      <button id ="battleship-game__Player-grid__I10" class = "battleship-game__Player-grid__I10 buttons"> I10</button>
-      <div class = "battleship-game__Player-grid__label-J labels"> J </div>
-      <button id ="battleship-game__Player-grid__J1" class = "battleship-game__Player-grid__J1 buttons"> J1 </button>
-      <button id ="battleship-game__Player-grid__J2" class = "battleship-game__Player-grid__J2 buttons"> </button>
-      <button id ="battleship-game__Player-grid__J3" class = "battleship-game__Player-grid__J3 buttons"> </button>
-      <button id ="battleship-game__Player-grid__J4" class = "battleship-game__Player-grid__J4 buttons"> </button>
-      <button id ="battleship-game__Player-grid__J5" class = "battleship-game__Player-grid__J5 buttons"> J5</button>
-      <button id ="battleship-game__Player-grid__J6" class = "battleship-game__Player-grid__J6 buttons"> </button>
-      <button id ="battleship-game__Player-grid__J7" class = "battleship-game__Player-grid__J7 buttons"> </button>
-      <button id ="battleship-game__Player-grid__J8" class = "battleship-game__Player-grid__J8 buttons"> </button>
-      <button id ="battleship-game__Player-grid__J9" class = "battleship-game__Player-grid__J9 buttons"> </button>
-      <button id ="battleship-game__Player-grid__J10" class = "battleship-game__Player-grid__J10 buttons"> J10</button>
+      <div class = "battleship-game__Player-grid__label-0 battleship-game__Player-grid__labels"> </div> <!-- This is just here to fill in the corner space -->
+      <div class = "battleship-game__Player-grid__label-1 battleship-game__Player-grid__labels"> 1 </div>
+      <div class = "battleship-game__Player-grid__label-2 battleship-game__Player-grid__labels"> 2 </div>
+      <div class = "battleship-game__Player-grid__label-3 battleship-game__Player-grid__labels"> 3 </div>
+      <div class = "battleship-game__Player-grid__label-4 battleship-game__Player-grid__labels"> 4 </div>
+      <div class = "battleship-game__Player-grid__label-5 battleship-game__Player-grid__labels"> 5 </div>
+      <div class = "battleship-game__Player-grid__label-6 battleship-game__Player-grid__labels"> 6 </div>
+      <div class = "battleship-game__Player-grid__label-7 battleship-game__Player-grid__labels"> 7 </div>
+      <div class = "battleship-game__Player-grid__label-8 battleship-game__Player-grid__labels"> 8 </div>
+      <div class = "battleship-game__Player-grid__label-9 battleship-game__Player-grid__labels"> 9 </div>
+      <div class = "battleship-game__Player-grid__label-10 battleship-game__Player-grid__labels"> 10 </div>
+      <div class = "battleship-game__Player-grid__label-A battleship-game__Player-grid__labels"> A </div>
+      <button id ="battleship-game__Player-grid__A1" class ="battleship-game__Player-grid__A1 battleship-game__Player-grid__buttons"> A1 </button>
+      <button id ="battleship-game__Player-grid__A2" class ="battleship-game__Player-grid__A2 battleship-game__Player-grid__buttons"> </button>
+      <button id ="battleship-game__Player-grid__A3" class = "battleship-game__Player-grid__A3 battleship-game__Player-grid__buttons"> </button>
+      <button id ="battleship-game__Player-grid__A4" class = "battleship-game__Player-grid__A4 battleship-game__Player-grid__buttons" > </button>
+      <button id ="battleship-game__Player-grid__A5" class = "battleship-game__Player-grid__A5 battleship-game__Player-grid__buttons"> A5 </button>
+      <button id ="battleship-game__Player-grid__A6" class = "battleship-game__Player-grid__A6 battleship-game__Player-grid__buttons"> </button>
+      <button id ="battleship-game__Player-grid__A7" class = "battleship-game__Player-grid__A7 battleship-game__Player-grid__buttons"> </button>
+      <button id ="battleship-game__Player-grid__A8" class = "battleship-game__Player-grid__A8 battleship-game__Player-grid__buttons"> </button>
+      <button id ="battleship-game__Player-grid__A9" class = "battleship-game__Player-grid__A9 battleship-game__Player-grid__buttons" > </button>
+      <button id ="battleship-game__Player-grid__A10" class = "battleship-game__Player-grid__A10 battleship-game__Player-grid__buttons"> A10 </button>
+      <div class = "battleship-game__Player-grid__label-B battleship-game__Player-grid__labels"> B </div>
+      <button id ="battleship-game__Player-grid__B1" class = "battleship-game__Player-grid__B1 battleship-game__Player-grid__buttons" > B1</button>
+      <button id ="battleship-game__Player-grid__B2" class = "battleship-game__Player-grid__B2 battleship-game__Player-grid__buttons"> </button>
+      <button id ="battleship-game__Player-grid__B3" class = "battleship-game__Player-grid__B3 battleship-game__Player-grid__buttons"> </button>
+      <button id ="battleship-game__Player-grid__B4" class = "battleship-game__Player-grid__B4 battleship-game__Player-grid__buttons"> </button>
+      <button id ="battleship-game__Player-grid__B5" class = "battleship-game__Player-grid__B5 battleship-game__Player-grid__buttons"> B5 </button>
+      <button id ="battleship-game__Player-grid__B6" class = "battleship-game__Player-grid__B6 battleship-game__Player-grid__buttons" > </button>
+      <button id ="battleship-game__Player-grid__B7" class = "battleship-game__Player-grid__B7 battleship-game__Player-grid__buttons"> </button>
+      <button id ="battleship-game__Player-grid__B8" class = "battleship-game__Player-grid__B8 battleship-game__Player-grid__buttons"> </button>
+      <button id ="battleship-game__Player-grid__B9" class = "battleship-game__Player-grid__B9 battleship-game__Player-grid__buttons"> </button>
+      <button id ="battleship-game__Player-grid__B10" class = "battleship-game__Player-grid__B10 battleship-game__Player-grid__buttons"> B10 </button>
+      <div class = "battleship-game__Player-grid__label-C battleship-game__Player-grid__labels"> C </div>
+      <button id ="battleship-game__Player-grid__C1" class = "battleship-game__Player-grid__C1 battleship-game__Player-grid__buttons"> C1</button>
+      <button id ="battleship-game__Player-grid__C2" class = "battleship-game__Player-grid__C2 battleship-game__Player-grid__buttons"> </button>
+      <button id ="battleship-game__Player-grid__C3" class = "battleship-game__Player-grid__C3 battleship-game__Player-grid__buttons"> </button>
+      <button id ="battleship-game__Player-grid__C4" class = "battleship-game__Player-grid__C4 battleship-game__Player-grid__buttons"> </button>
+      <button id ="battleship-game__Player-grid__C5" class = "battleship-game__Player-grid__C5 battleship-game__Player-grid__buttons"> C5</button>
+      <button id ="battleship-game__Player-grid__C6" class = "battleship-game__Player-grid__C6 battleship-game__Player-grid__buttons"> </button>
+      <button id ="battleship-game__Player-grid__C7" class = "battleship-game__Player-grid__C7 battleship-game__Player-grid__buttons"> </button>
+      <button id ="battleship-game__Player-grid__C8" class = "battleship-game__Player-grid__C8 battleship-game__Player-grid__buttons"> </button>
+      <button id ="battleship-game__Player-grid__C9" class = "battleship-game__Player-grid__C9 battleship-game__Player-grid__buttons"> </button>
+      <button id ="battleship-game__Player-grid__C10" class = "battleship-game__Player-grid__C10 battleship-game__Player-grid__buttons">C10 </button>
+      <div class = "battleship-game__Player-grid__label-D battleship-game__Player-grid__labels"> D </div>
+      <button id ="battleship-game__Player-grid__D1" class = "battleship-game__Player-grid__D1 battleship-game__Player-grid__buttons"> D1</button>
+      <button id ="battleship-game__Player-grid__D2" class = "battleship-game__Player-grid__D2 battleship-game__Player-grid__buttons"> </button>
+      <button id ="battleship-game__Player-grid__D3" class = "battleship-game__Player-grid__D3 battleship-game__Player-grid__buttons"> </button>
+      <button id ="battleship-game__Player-grid__D4" class = "battleship-game__Player-grid__D4 battleship-game__Player-grid__buttons"> </button>
+      <button id ="battleship-game__Player-grid__D5" class = "battleship-game__Player-grid__D5 battleship-game__Player-grid__buttons" > D5</button>
+      <button id ="battleship-game__Player-grid__D6" class = "battleship-game__Player-grid__D6 battleship-game__Player-grid__buttons"> </button>
+      <button id ="battleship-game__Player-grid__D7" class = "battleship-game__Player-grid__D7 battleship-game__Player-grid__buttons"> </button>
+      <button id ="battleship-game__Player-grid__D8" class = "battleship-game__Player-grid__D8 battleship-game__Player-grid__buttons"> </button>
+      <button id ="battleship-game__Player-grid__D9" class = "battleship-game__Player-grid__D9 battleship-game__Player-grid__buttons"> </button>
+      <button id ="battleship-game__Player-grid__D10" class = "battleship-game__Player-grid__D10 battleship-game__Player-grid__buttons">D10 </button>
+      <div class = "battleship-game__Player-grid__label-E battleship-game__Player-grid__labels"> E </div>
+      <button id ="battleship-game__Player-grid__E1" class = "battleship-game__Player-grid__E1 battleship-game__Player-grid__buttons"> E1</button>
+      <button id ="battleship-game__Player-grid__E2" class = "battleship-game__Player-grid__E2 battleship-game__Player-grid__buttons"> </button>
+      <button id ="battleship-game__Player-grid__E3" class = "battleship-game__Player-grid__E3 battleship-game__Player-grid__buttons" > </button>
+      <button id ="battleship-game__Player-grid__E4" class = "battleship-game__Player-grid__E4 battleship-game__Player-grid__buttons"> </button>
+      <button id ="battleship-game__Player-grid__E5" class = "battleship-game__Player-grid__E5 battleship-game__Player-grid__buttons">E5 </button>
+      <button id ="battleship-game__Player-grid__E6" class = "battleship-game__Player-grid__E6 battleship-game__Player-grid__buttons"> </button>
+      <button id ="battleship-game__Player-grid__E7" class = "battleship-game__Player-grid__E7 battleship-game__Player-grid__buttons"> </button>
+      <button id ="battleship-game__Player-grid__E8" class = "battleship-game__Player-grid__E8 battleship-game__Player-grid__buttons"> </button>
+      <button id ="battleship-game__Player-grid__E9" class = "battleship-game__Player-grid__E9 battleship-game__Player-grid__buttons"> </button>
+      <button id ="battleship-game__Player-grid__E10" class = "battleship-game__Player-grid__E10 battleship-game__Player-grid__buttons">E10 </button>
+      <div class = "battleship-game__Player-grid__label-F battleship-game__Player-grid__labels"> F </div>
+      <button id ="battleship-game__Player-grid__F1" class = "battleship-game__Player-grid__F1 battleship-game__Player-grid__buttons">F1 </button>
+      <button id ="battleship-game__Player-grid__F2" class = "battleship-game__Player-grid__F2 battleship-game__Player-grid__buttons"> </button>
+      <button id ="battleship-game__Player-grid__F3" class = "battleship-game__Player-grid__F3 battleship-game__Player-grid__buttons"> </button>
+      <button id ="battleship-game__Player-grid__F4" class = "battleship-game__Player-grid__F4 battleship-game__Player-grid__buttons"> </button>
+      <button id ="battleship-game__Player-grid__F5" class = "battleship-game__Player-grid__F5 battleship-game__Player-grid__buttons">F5 </button>
+      <button id ="battleship-game__Player-grid__F6" class = "battleship-game__Player-grid__F6 battleship-game__Player-grid__buttons"> </button>
+      <button id ="battleship-game__Player-grid__F7" class = "battleship-game__Player-grid__F7 battleship-game__Player-grid__buttons"> </button>
+      <button id ="battleship-game__Player-grid__F8" class = "battleship-game__Player-grid__F8 battleship-game__Player-grid__buttons"> </button>
+      <button id ="battleship-game__Player-grid__F9" class = "battleship-game__Player-grid__F9 battleship-game__Player-grid__buttons"> </button>
+      <button id ="battleship-game__Player-grid__F10" class = "battleship-game__Player-grid__F10 battleship-game__Player-grid__buttons">F10 </button>
+      <div class = "battleship-game__Player-grid__label-G battleship-game__Player-grid__labels"> G </div>
+      <button id ="battleship-game__Player-grid__G1" class = "battleship-game__Player-grid__G1 battleship-game__Player-grid__buttons">G1 </button>
+      <button id ="battleship-game__Player-grid__G2" class = "battleship-game__Player-grid__G2 battleship-game__Player-grid__buttons"> </button>
+      <button id ="battleship-game__Player-grid__G3" class = "battleship-game__Player-grid__G3 battleship-game__Player-grid__buttons"> </button>
+      <button id ="battleship-game__Player-grid__G4" class = "battleship-game__Player-grid__G4 battleship-game__Player-grid__buttons"> </button>
+      <button id ="battleship-game__Player-grid__G5" class = "battleship-game__Player-grid__G5 battleship-game__Player-grid__buttons">G5 </button>
+      <button id ="battleship-game__Player-grid__G6" class = "battleship-game__Player-grid__G6 battleship-game__Player-grid__buttons"> </button>
+      <button id ="battleship-game__Player-grid__G7" class = "battleship-game__Player-grid__G7 battleship-game__Player-grid__buttons"> </button>
+      <button id ="battleship-game__Player-grid__G8" class = "battleship-game__Player-grid__G8 battleship-game__Player-grid__buttons"> </button>
+      <button id ="battleship-game__Player-grid__G9" class = "battleship-game__Player-grid__G9 battleship-game__Player-grid__buttons"> </button>
+      <button id ="battleship-game__Player-grid__G10" class = "battleship-game__Player-grid__G10 battleship-game__Player-grid__buttons" >G10 </button>
+      <div class = "battleship-game__Player-grid__label-H battleship-game__Player-grid__labels"> H </div>
+      <button id ="battleship-game__Player-grid__H1" class = "battleship-game__Player-grid__H1 battleship-game__Player-grid__buttons">H1 </button>
+      <button id ="battleship-game__Player-grid__H2" class = "battleship-game__Player-grid__H2 battleship-game__Player-grid__buttons"> </button>
+      <button id ="battleship-game__Player-grid__H3" class = "battleship-game__Player-grid__H3 battleship-game__Player-grid__buttons"> </button>
+      <button id ="battleship-game__Player-grid__H4" class = "battleship-game__Player-grid__H4 battleship-game__Player-grid__buttons"> </button>
+      <button id ="battleship-game__Player-grid__H5" class = "battleship-game__Player-grid__H5 battleship-game__Player-grid__buttons">H5 </button>
+      <button id ="battleship-game__Player-grid__H6" class = "battleship-game__Player-grid__H6 battleship-game__Player-grid__buttons"> </button>
+      <button id ="battleship-game__Player-grid__H7" class = "battleship-game__Player-grid__H7 battleship-game__Player-grid__buttons"> </button>
+      <button id ="battleship-game__Player-grid__H8" class = "battleship-game__Player-grid__H8 battleship-game__Player-grid__buttons"> </button>
+      <button id ="battleship-game__Player-grid__H9" class = "battleship-game__Player-grid__H9 battleship-game__Player-grid__buttons"> </button>
+      <button id ="battleship-game__Player-grid__H10" class = "battleship-game__Player-grid__H10 battleship-game__Player-grid__buttons">H10 </button>
+      <div class = "battleship-game__Player-grid__label-I battleship-game__Player-grid__labels"> I </div>
+      <button id ="battleship-game__Player-grid__I1" class = "battleship-game__Player-grid__I1 battleship-game__Player-grid__buttons">I1 </button>
+      <button id ="battleship-game__Player-grid__I2" class = "battleship-game__Player-grid__I2 battleship-game__Player-grid__buttons" > </button>
+      <button id ="battleship-game__Player-grid__I3" class = "battleship-game__Player-grid__I3 battleship-game__Player-grid__buttons"> </button>
+      <button id ="battleship-game__Player-grid__I4" class = "battleship-game__Player-grid__I4 battleship-game__Player-grid__buttons"> </button>
+      <button id ="battleship-game__Player-grid__I5" class = "battleship-game__Player-grid__I5 battleship-game__Player-grid__buttons">I5 </button>
+      <button id ="battleship-game__Player-grid__I6" class = "battleship-game__Player-grid__I6 battleship-game__Player-grid__buttons"> </button>
+      <button id ="battleship-game__Player-grid__I7" class = "battleship-game__Player-grid__I7 battleship-game__Player-grid__buttons" > </button>
+      <button id ="battleship-game__Player-grid__I8" class = "battleship-game__Player-grid__I8 battleship-game__Player-grid__buttons"> </button>
+      <button id ="battleship-game__Player-grid__I9" class = "battleship-game__Player-grid__I9 battleship-game__Player-grid__buttons"> </button>
+      <button id ="battleship-game__Player-grid__I10" class = "battleship-game__Player-grid__I10 battleship-game__Player-grid__buttons"> I10</button>
+      <div class = "battleship-game__Player-grid__label-J battleship-game__Player-grid__labels"> J </div>
+      <button id ="battleship-game__Player-grid__J1" class = "battleship-game__Player-grid__J1 battleship-game__Player-grid__buttons"> J1 </button>
+      <button id ="battleship-game__Player-grid__J2" class = "battleship-game__Player-grid__J2 battleship-game__Player-grid__buttons"> </button>
+      <button id ="battleship-game__Player-grid__J3" class = "battleship-game__Player-grid__J3 battleship-game__Player-grid__buttons"> </button>
+      <button id ="battleship-game__Player-grid__J4" class = "battleship-game__Player-grid__J4 battleship-game__Player-grid__buttons"> </button>
+      <button id ="battleship-game__Player-grid__J5" class = "battleship-game__Player-grid__J5 battleship-game__Player-grid__buttons"> J5</button>
+      <button id ="battleship-game__Player-grid__J6" class = "battleship-game__Player-grid__J6 battleship-game__Player-grid__buttons"> </button>
+      <button id ="battleship-game__Player-grid__J7" class = "battleship-game__Player-grid__J7 battleship-game__Player-grid__buttons"> </button>
+      <button id ="battleship-game__Player-grid__J8" class = "battleship-game__Player-grid__J8 battleship-game__Player-grid__buttons"> </button>
+      <button id ="battleship-game__Player-grid__J9" class = "battleship-game__Player-grid__J9 battleship-game__Player-grid__buttons"> </button>
+      <button id ="battleship-game__Player-grid__J10" class = "battleship-game__Player-grid__J10 battleship-game__Player-grid__buttons"> J10</button>
     </div>
+    <div class = "battleship-game__info"> 
+      <h3 class = "battleship-game__info__header"> Please select your ships on your board. <br>
+        Then, press "Start Game" and place your guesses on the guess board.<br> 
+         The game ends when either your or your opponent's ships are fully sunk. </h3>
+      <button class = "battleship-game__info__start-game-button"> Start Game </button>
+    </div>
+    
 <!-- GUESSES GRID -->
     <div class = "battleship-game__Guess-grid">
-      <div class = "battleship-game__Guess-grid__label-0"> </div> <!-- This is just here to fill in the corner space -->
-      <div class = "battleship-game__Guess-grid__label-1"> 1 </div>
-      <div class = "battleship-game__Guess-grid__label-2"> 2 </div>
-      <div class = "battleship-game__Guess-grid__label-3"> 3 </div>
-      <div class = "battleship-game__Guess-grid__label-4"> 4 </div>
-      <div class = "battleship-game__Guess-grid__label-5"> 5 </div>
-      <div class = "battleship-game__Guess-grid__label-6"> 6 </div>
-      <div class = "battleship-game__Guess-grid__label-7"> 7 </div>
-      <div class = "battleship-game__Guess-grid__label-8"> 8 </div>
-      <div class = "battleship-game__Guess-grid__label-9"> 9 </div>
-      <div class = "battleship-game__Guess-grid__label-10"> 10 </div>
-      <div class = "battleship-game__Guess-grid__label-A labels"> A </div>
-      <button id ="battleship-game__Guess-grid__A1" class ="battleship-game__Guess-grid__A1 buttons"> A1 </button>
-      <button id ="battleship-game__Guess-grid__A2" class ="battleship-game__Guess-grid__A2 buttons"> </button>
-      <button id ="battleship-game__Guess-grid__A3" class = "battleship-game__Guess-grid__A3 buttons"> </button>
-      <button id ="battleship-game__Guess-grid__A4" class = "battleship-game__Guess-grid__A4 buttons" > </button>
-      <button id ="battleship-game__Guess-grid__A5" class = "battleship-game__Guess-grid__A5 buttons"> A5 </button>
-      <button id ="battleship-game__Guess-grid__A6" class = "battleship-game__Guess-grid__A6 buttons"> </button>
-      <button id ="battleship-game__Guess-grid__A7" class = "battleship-game__Guess-grid__A7 buttons"> </button>
-      <button id ="battleship-game__Guess-grid__A8" class = "battleship-game__Guess-grid__A8 buttons"> </button>
-      <button id ="battleship-game__Guess-grid__A9" class = "battleship-game__Guess-grid__A9 buttons" > </button>
-      <button id ="battleship-game__Guess-grid__A10" class = "battleship-game__Guess-grid__A10 buttons"> A10 </button>
-      <div class = "battleship-game__Guess-grid__label-B labels"> B </div>
-      <button id ="battleship-game__Guess-grid__B1" class = "battleship-game__Guess-grid__B1 buttons" > B1</button>
-      <button id ="battleship-game__Guess-grid__B2" class = "battleship-game__Guess-grid__B2 buttons"> </button>
-      <button id ="battleship-game__Guess-grid__B3" class = "battleship-game__Guess-grid__B3 buttons"> </button>
-      <button id ="battleship-game__Guess-grid__B4" class = "battleship-game__Guess-grid__B4 buttons"> </button>
-      <button id ="battleship-game__Guess-grid__B5" class = "battleship-game__Guess-grid__B5 buttons"> B5 </button>
-      <button id ="battleship-game__Guess-grid__B6" class = "battleship-game__Guess-grid__B6 buttons" > </button>
-      <button id ="battleship-game__Guess-grid__B7" class = "battleship-game__Guess-grid__B7 buttons"> </button>
-      <button id ="battleship-game__Guess-grid__B8" class = "battleship-game__Guess-grid__B8 buttons"> </button>
-      <button id ="battleship-game__Guess-grid__B9" class = "battleship-game__Guess-grid__B9 buttons"> </button>
-      <button id ="battleship-game__Guess-grid__B10" class = "battleship-game__Guess-grid__B10 buttons"> B10 </button>
-      <div class = "battleship-game__Guess-grid__label-C labels"> C </div>
-      <button id ="battleship-game__Guess-grid__C1" class = "battleship-game__Guess-grid__C1 buttons"> C1</button>
-      <button id ="battleship-game__Guess-grid__C2" class = "battleship-game__Guess-grid__C2 buttons"> </button>
-      <button id ="battleship-game__Guess-grid__C3" class = "battleship-game__Guess-grid__C3 buttons"> </button>
-      <button id ="battleship-game__Guess-grid__C4" class = "battleship-game__Guess-grid__C4 buttons"> </button>
-      <button id ="battleship-game__Guess-grid__C5" class = "battleship-game__Guess-grid__C5 buttons"> C5</button>
-      <button id ="battleship-game__Guess-grid__C6" class = "battleship-game__Guess-grid__C6 buttons"> </button>
-      <button id ="battleship-game__Guess-grid__C7" class = "battleship-game__Guess-grid__C7 buttons"> </button>
-      <button id ="battleship-game__Guess-grid__C8" class = "battleship-game__Guess-grid__C8 buttons"> </button>
-      <button id ="battleship-game__Guess-grid__C9" class = "battleship-game__Guess-grid__C9 buttons"> </button>
-      <button id ="battleship-game__Guess-grid__C10" class = "battleship-game__Guess-grid__C10 buttons">C10 </button>
-      <div class = "battleship-game__Guess-grid__label-D labels"> D </div>
-      <button id ="battleship-game__Guess-grid__D1" class = "battleship-game__Guess-grid__D1 buttons"> D1</button>
-      <button id ="battleship-game__Guess-grid__D2" class = "battleship-game__Guess-grid__D2 buttons"> </button>
-      <button id ="battleship-game__Guess-grid__D3" class = "battleship-game__Guess-grid__D3 buttons"> </button>
-      <button id ="battleship-game__Guess-grid__D4" class = "battleship-game__Guess-grid__D4 buttons"> </button>
-      <button id ="battleship-game__Guess-grid__D5" class = "battleship-game__Guess-grid__D5 buttons" > D5</button>
-      <button id ="battleship-game__Guess-grid__D6" class = "battleship-game__Guess-grid__D6 buttons"> </button>
-      <button id ="battleship-game__Guess-grid__D7" class = "battleship-game__Guess-grid__D7 buttons"> </button>
-      <button id ="battleship-game__Guess-grid__D8" class = "battleship-game__Guess-grid__D8 buttons"> </button>
-      <button id ="battleship-game__Guess-grid__D9" class = "battleship-game__Guess-grid__D9 buttons"> </button>
-      <button id ="battleship-game__Guess-grid__D10" class = "battleship-game__Guess-grid__D10 buttons">D10 </button>
-      <div class = "battleship-game__Guess-grid__label-E labels"> E </div>
-      <button id ="battleship-game__Guess-grid__E1" class = "battleship-game__Guess-grid__E1 buttons"> E1</button>
-      <button id ="battleship-game__Guess-grid__E2" class = "battleship-game__Guess-grid__E2 buttons"> </button>
-      <button id ="battleship-game__Guess-grid__E3" class = "battleship-game__Guess-grid__E3 buttons" > </button>
-      <button id ="battleship-game__Guess-grid__E4" class = "battleship-game__Guess-grid__E4 buttons"> </button>
-      <button id ="battleship-game__Guess-grid__E5" class = "battleship-game__Guess-grid__E5 buttons">E5 </button>
-      <button id ="battleship-game__Guess-grid__E6" class = "battleship-game__Guess-grid__E6 buttons"> </button>
-      <button id ="battleship-game__Guess-grid__E7" class = "battleship-game__Guess-grid__E7 buttons"> </button>
-      <button id ="battleship-game__Guess-grid__E8" class = "battleship-game__Guess-grid__E8 buttons"> </button>
-      <button id ="battleship-game__Guess-grid__E9" class = "battleship-game__Guess-grid__E9 buttons"> </button>
-      <button id ="battleship-game__Guess-grid__E10" class = "battleship-game__Guess-grid__E10 buttons">E10 </button>
-      <div class = "battleship-game__Guess-grid__label-F labels"> F </div>
-      <button id ="battleship-game__Guess-grid__F1" class = "battleship-game__Guess-grid__F1 buttons">F1 </button>
-      <button id ="battleship-game__Guess-grid__F2" class = "battleship-game__Guess-grid__F2 buttons"> </button>
-      <button id ="battleship-game__Guess-grid__F3" class = "battleship-game__Guess-grid__F3 buttons"> </button>
-      <button id ="battleship-game__Guess-grid__F4" class = "battleship-game__Guess-grid__F4 buttons"> </button>
-      <button id ="battleship-game__Guess-grid__F5" class = "battleship-game__Guess-grid__F5 buttons">F5 </button>
-      <button id ="battleship-game__Guess-grid__F6" class = "battleship-game__Guess-grid__F6 buttons"> </button>
-      <button id ="battleship-game__Guess-grid__F7" class = "battleship-game__Guess-grid__F7 buttons"> </button>
-      <button id ="battleship-game__Guess-grid__F8" class = "battleship-game__Guess-grid__F8 buttons"> </button>
-      <button id ="battleship-game__Guess-grid__F9" class = "battleship-game__Guess-grid__F9 buttons"> </button>
-      <button id ="battleship-game__Guess-grid__F10" class = "battleship-game__Guess-grid__F10 buttons">F10 </button>
-      <div class = "battleship-game__Guess-grid__label-G labels"> G </div>
-      <button id ="battleship-game__Guess-grid__G1" class = "battleship-game__Guess-grid__G1 buttons">G1 </button>
-      <button id ="battleship-game__Guess-grid__G2" class = "battleship-game__Guess-grid__G2 buttons"> </button>
-      <button id ="battleship-game__Guess-grid__G3" class = "battleship-game__Guess-grid__G3 buttons"> </button>
-      <button id ="battleship-game__Guess-grid__G4" class = "battleship-game__Guess-grid__G4 buttons"> </button>
-      <button id ="battleship-game__Guess-grid__G5" class = "battleship-game__Guess-grid__G5 buttons">G5 </button>
-      <button id ="battleship-game__Guess-grid__G6" class = "battleship-game__Guess-grid__G6 buttons"> </button>
-      <button id ="battleship-game__Guess-grid__G7" class = "battleship-game__Guess-grid__G7 buttons"> </button>
-      <button id ="battleship-game__Guess-grid__G8" class = "battleship-game__Guess-grid__G8 buttons"> </button>
-      <button id ="battleship-game__Guess-grid__G9" class = "battleship-game__Guess-grid__G9 buttons"> </button>
-      <button id ="battleship-game__Guess-grid__G10" class = "battleship-game__Guess-grid__G10 buttons" >G10 </button>
-      <div class = "battleship-game__Guess-grid__label-H labels"> H </div>
-      <button id ="battleship-game__Guess-grid__H1" class = "battleship-game__Guess-grid__H1 buttons">H1 </button>
-      <button id ="battleship-game__Guess-grid__H2" class = "battleship-game__Guess-grid__H2 buttons"> </button>
-      <button id ="battleship-game__Guess-grid__H3" class = "battleship-game__Guess-grid__H3 buttons"> </button>
-      <button id ="battleship-game__Guess-grid__H4" class = "battleship-game__Guess-grid__H4 buttons"> </button>
-      <button id ="battleship-game__Guess-grid__H5" class = "battleship-game__Guess-grid__H5 buttons">H5 </button>
-      <button id ="battleship-game__Guess-grid__H6" class = "battleship-game__Guess-grid__H6 buttons"> </button>
-      <button id ="battleship-game__Guess-grid__H7" class = "battleship-game__Guess-grid__H7 buttons"> </button>
-      <button id ="battleship-game__Guess-grid__H8" class = "battleship-game__Guess-grid__H8 buttons"> </button>
-      <button id ="battleship-game__Guess-grid__H9" class = "battleship-game__Guess-grid__H9 buttons"> </button>
-      <button id ="battleship-game__Guess-grid__H10" class = "battleship-game__Guess-grid__H10 buttons">H10 </button>
-      <div class = "battleship-game__Guess-grid__label-I labels"> I </div>
-      <button id ="battleship-game__Guess-grid__I1" class = "battleship-game__Guess-grid__I1 buttons">I1 </button>
-      <button id ="battleship-game__Guess-grid__I2" class = "battleship-game__Guess-grid__I2 buttons" > </button>
-      <button id ="battleship-game__Guess-grid__I3" class = "battleship-game__Guess-grid__I3 buttons"> </button>
-      <button id ="battleship-game__Guess-grid__I4" class = "battleship-game__Guess-grid__I4 buttons"> </button>
-      <button id ="battleship-game__Guess-grid__I5" class = "battleship-game__Guess-grid__I5 buttons">I5 </button>
-      <button id ="battleship-game__Guess-grid__I6" class = "battleship-game__Guess-grid__I6 buttons"> </button>
-      <button id ="battleship-game__Guess-grid__I7" class = "battleship-game__Guess-grid__I7 buttons" > </button>
-      <button id ="battleship-game__Guess-grid__I8" class = "battleship-game__Guess-grid__I8 buttons"> </button>
-      <button id ="battleship-game__Guess-grid__I9" class = "battleship-game__Guess-grid__I9 buttons"> </button>
-      <button id ="battleship-game__Guess-grid__I10" class = "battleship-game__Guess-grid__I10 buttons"> I10</button>
-      <div class = "battleship-game__Guess-grid__label-J labels"> J </div>
-      <button id ="battleship-game__Guess-grid__J1" class = "battleship-game__Guess-grid__J1 buttons"> J1 </button>
-      <button id ="battleship-game__Guess-grid__J2" class = "battleship-game__Guess-grid__J2 buttons"> </button>
-      <button id ="battleship-game__Guess-grid__J3" class = "battleship-game__Guess-grid__J3 buttons"> </button>
-      <button id ="battleship-game__Guess-grid__J4" class = "battleship-game__Guess-grid__J4 buttons"> </button>
-      <button id ="battleship-game__Guess-grid__J5" class = "battleship-game__Guess-grid__J5 buttons"> J5</button>
-      <button id ="battleship-game__Guess-grid__J6" class = "battleship-game__Guess-grid__J6 buttons"> </button>
-      <button id ="battleship-game__Guess-grid__J7" class = "battleship-game__Guess-grid__J7 buttons"> </button>
-      <button id ="battleship-game__Guess-grid__J8" class = "battleship-game__Guess-grid__J8 buttons"> </button>
-      <button id ="battleship-game__Guess-grid__J9" class = "battleship-game__Guess-grid__J9 buttons"> </button>
-      <button id ="battleship-game__Guess-grid__J10" class = "battleship-game__Guess-grid__J10 buttons"> J10</button>
+      <div class = "battleship-game__Guess-grid__label-0 battleship-game__Guess-grid__labels"> </div> <!-- This is just here to fill in the corner space -->
+      <div class = "battleship-game__Guess-grid__label-1 battleship-game__Guess-grid__labels"> 1 </div>
+      <div class = "battleship-game__Guess-grid__label-2 battleship-game__Guess-grid__labels"> 2 </div>
+      <div class = "battleship-game__Guess-grid__label-3 battleship-game__Guess-grid__labels"> 3 </div>
+      <div class = "battleship-game__Guess-grid__label-4 battleship-game__Guess-grid__labels"> 4 </div>
+      <div class = "battleship-game__Guess-grid__label-5 battleship-game__Guess-grid__labels"> 5 </div>
+      <div class = "battleship-game__Guess-grid__label-6 battleship-game__Guess-grid__labels"> 6 </div>
+      <div class = "battleship-game__Guess-grid__label-7 battleship-game__Guess-grid__labels"> 7 </div>
+      <div class = "battleship-game__Guess-grid__label-8 battleship-game__Guess-grid__labels"> 8 </div>
+      <div class = "battleship-game__Guess-grid__label-9 battleship-game__Guess-grid__labels"> 9 </div>
+      <div class = "battleship-game__Guess-grid__label-10 battleship-game__Guess-grid__labels"> 10 </div>
+      <div class = "battleship-game__Guess-grid__label-A battleship-game__Guess-grid__labels"> A </div>
+      <button id ="battleship-game__Guess-grid__A1" class ="battleship-game__Guess-grid__A1 battleship-game__Guess-grid__buttons"> A1 </button>
+      <button id ="battleship-game__Guess-grid__A2" class ="battleship-game__Guess-grid__A2 battleship-game__Guess-grid__buttons"> </button>
+      <button id ="battleship-game__Guess-grid__A3" class = "battleship-game__Guess-grid__A3 battleship-game__Guess-grid__buttons"> </button>
+      <button id ="battleship-game__Guess-grid__A4" class = "battleship-game__Guess-grid__A4 battleship-game__Guess-grid__buttons" > </button>
+      <button id ="battleship-game__Guess-grid__A5" class = "battleship-game__Guess-grid__A5 battleship-game__Guess-grid__buttons"> A5 </button>
+      <button id ="battleship-game__Guess-grid__A6" class = "battleship-game__Guess-grid__A6 battleship-game__Guess-grid__buttons"> </button>
+      <button id ="battleship-game__Guess-grid__A7" class = "battleship-game__Guess-grid__A7 battleship-game__Guess-grid__buttons"> </button>
+      <button id ="battleship-game__Guess-grid__A8" class = "battleship-game__Guess-grid__A8 battleship-game__Guess-grid__buttons"> </button>
+      <button id ="battleship-game__Guess-grid__A9" class = "battleship-game__Guess-grid__A9 battleship-game__Guess-grid__buttons" > </button>
+      <button id ="battleship-game__Guess-grid__A10" class = "battleship-game__Guess-grid__A10 battleship-game__Guess-grid__buttons"> A10 </button>
+      <div class = "battleship-game__Guess-grid__label-B battleship-game__Guess-grid__labels"> B </div>
+      <button id ="battleship-game__Guess-grid__B1" class = "battleship-game__Guess-grid__B1 battleship-game__Guess-grid__buttons" > B1</button>
+      <button id ="battleship-game__Guess-grid__B2" class = "battleship-game__Guess-grid__B2 battleship-game__Guess-grid__buttons"> </button>
+      <button id ="battleship-game__Guess-grid__B3" class = "battleship-game__Guess-grid__B3 battleship-game__Guess-grid__buttons"> </button>
+      <button id ="battleship-game__Guess-grid__B4" class = "battleship-game__Guess-grid__B4 battleship-game__Guess-grid__buttons"> </button>
+      <button id ="battleship-game__Guess-grid__B5" class = "battleship-game__Guess-grid__B5 battleship-game__Guess-grid__buttons"> B5 </button>
+      <button id ="battleship-game__Guess-grid__B6" class = "battleship-game__Guess-grid__B6 battleship-game__Guess-grid__buttons" > </button>
+      <button id ="battleship-game__Guess-grid__B7" class = "battleship-game__Guess-grid__B7 battleship-game__Guess-grid__buttons"> </button>
+      <button id ="battleship-game__Guess-grid__B8" class = "battleship-game__Guess-grid__B8 battleship-game__Guess-grid__buttons"> </button>
+      <button id ="battleship-game__Guess-grid__B9" class = "battleship-game__Guess-grid__B9 battleship-game__Guess-grid__buttons"> </button>
+      <button id ="battleship-game__Guess-grid__B10" class = "battleship-game__Guess-grid__B10 battleship-game__Guess-grid__buttons"> B10 </button>
+      <div class = "battleship-game__Guess-grid__label-C battleship-game__Guess-grid__labels"> C </div>
+      <button id ="battleship-game__Guess-grid__C1" class = "battleship-game__Guess-grid__C1 battleship-game__Guess-grid__buttons"> C1</button>
+      <button id ="battleship-game__Guess-grid__C2" class = "battleship-game__Guess-grid__C2 battleship-game__Guess-grid__buttons"> </button>
+      <button id ="battleship-game__Guess-grid__C3" class = "battleship-game__Guess-grid__C3 battleship-game__Guess-grid__buttons"> </button>
+      <button id ="battleship-game__Guess-grid__C4" class = "battleship-game__Guess-grid__C4 battleship-game__Guess-grid__buttons"> </button>
+      <button id ="battleship-game__Guess-grid__C5" class = "battleship-game__Guess-grid__C5 battleship-game__Guess-grid__buttons"> C5</button>
+      <button id ="battleship-game__Guess-grid__C6" class = "battleship-game__Guess-grid__C6 battleship-game__Guess-grid__buttons"> </button>
+      <button id ="battleship-game__Guess-grid__C7" class = "battleship-game__Guess-grid__C7 battleship-game__Guess-grid__buttons"> </button>
+      <button id ="battleship-game__Guess-grid__C8" class = "battleship-game__Guess-grid__C8 battleship-game__Guess-grid__buttons"> </button>
+      <button id ="battleship-game__Guess-grid__C9" class = "battleship-game__Guess-grid__C9 battleship-game__Guess-grid__buttons"> </button>
+      <button id ="battleship-game__Guess-grid__C10" class = "battleship-game__Guess-grid__C10 battleship-game__Guess-grid__buttons">C10 </button>
+      <div class = "battleship-game__Guess-grid__label-D battleship-game__Guess-grid__labels"> D </div>
+      <button id ="battleship-game__Guess-grid__D1" class = "battleship-game__Guess-grid__D1 battleship-game__Guess-grid__buttons"> D1</button>
+      <button id ="battleship-game__Guess-grid__D2" class = "battleship-game__Guess-grid__D2 battleship-game__Guess-grid__buttons"> </button>
+      <button id ="battleship-game__Guess-grid__D3" class = "battleship-game__Guess-grid__D3 battleship-game__Guess-grid__buttons"> </button>
+      <button id ="battleship-game__Guess-grid__D4" class = "battleship-game__Guess-grid__D4 battleship-game__Guess-grid__buttons"> </button>
+      <button id ="battleship-game__Guess-grid__D5" class = "battleship-game__Guess-grid__D5 battleship-game__Guess-grid__buttons" > D5</button>
+      <button id ="battleship-game__Guess-grid__D6" class = "battleship-game__Guess-grid__D6 battleship-game__Guess-grid__buttons"> </button>
+      <button id ="battleship-game__Guess-grid__D7" class = "battleship-game__Guess-grid__D7 battleship-game__Guess-grid__buttons"> </button>
+      <button id ="battleship-game__Guess-grid__D8" class = "battleship-game__Guess-grid__D8 battleship-game__Guess-grid__buttons"> </button>
+      <button id ="battleship-game__Guess-grid__D9" class = "battleship-game__Guess-grid__D9 battleship-game__Guess-grid__buttons"> </button>
+      <button id ="battleship-game__Guess-grid__D10" class = "battleship-game__Guess-grid__D10 battleship-game__Guess-grid__buttons">D10 </button>
+      <div class = "battleship-game__Guess-grid__label-E battleship-game__Guess-grid__labels"> E </div>
+      <button id ="battleship-game__Guess-grid__E1" class = "battleship-game__Guess-grid__E1 battleship-game__Guess-grid__buttons"> E1</button>
+      <button id ="battleship-game__Guess-grid__E2" class = "battleship-game__Guess-grid__E2 battleship-game__Guess-grid__buttons"> </button>
+      <button id ="battleship-game__Guess-grid__E3" class = "battleship-game__Guess-grid__E3 battleship-game__Guess-grid__buttons" > </button>
+      <button id ="battleship-game__Guess-grid__E4" class = "battleship-game__Guess-grid__E4 battleship-game__Guess-grid__buttons"> </button>
+      <button id ="battleship-game__Guess-grid__E5" class = "battleship-game__Guess-grid__E5 battleship-game__Guess-grid__buttons">E5 </button>
+      <button id ="battleship-game__Guess-grid__E6" class = "battleship-game__Guess-grid__E6 battleship-game__Guess-grid__buttons"> </button>
+      <button id ="battleship-game__Guess-grid__E7" class = "battleship-game__Guess-grid__E7 battleship-game__Guess-grid__buttons"> </button>
+      <button id ="battleship-game__Guess-grid__E8" class = "battleship-game__Guess-grid__E8 battleship-game__Guess-grid__buttons"> </button>
+      <button id ="battleship-game__Guess-grid__E9" class = "battleship-game__Guess-grid__E9 battleship-game__Guess-grid__buttons"> </button>
+      <button id ="battleship-game__Guess-grid__E10" class = "battleship-game__Guess-grid__E10 battleship-game__Guess-grid__buttons">E10 </button>
+      <div class = "battleship-game__Guess-grid__label-F battleship-game__Guess-grid__labels"> F </div>
+      <button id ="battleship-game__Guess-grid__F1" class = "battleship-game__Guess-grid__F1 battleship-game__Guess-grid__buttons">F1 </button>
+      <button id ="battleship-game__Guess-grid__F2" class = "battleship-game__Guess-grid__F2 battleship-game__Guess-grid__buttons"> </button>
+      <button id ="battleship-game__Guess-grid__F3" class = "battleship-game__Guess-grid__F3 battleship-game__Guess-grid__buttons"> </button>
+      <button id ="battleship-game__Guess-grid__F4" class = "battleship-game__Guess-grid__F4 battleship-game__Guess-grid__buttons"> </button>
+      <button id ="battleship-game__Guess-grid__F5" class = "battleship-game__Guess-grid__F5 battleship-game__Guess-grid__buttons">F5 </button>
+      <button id ="battleship-game__Guess-grid__F6" class = "battleship-game__Guess-grid__F6 battleship-game__Guess-grid__buttons"> </button>
+      <button id ="battleship-game__Guess-grid__F7" class = "battleship-game__Guess-grid__F7 battleship-game__Guess-grid__buttons"> </button>
+      <button id ="battleship-game__Guess-grid__F8" class = "battleship-game__Guess-grid__F8 battleship-game__Guess-grid__buttons"> </button>
+      <button id ="battleship-game__Guess-grid__F9" class = "battleship-game__Guess-grid__F9 battleship-game__Guess-grid__buttons"> </button>
+      <button id ="battleship-game__Guess-grid__F10" class = "battleship-game__Guess-grid__F10 battleship-game__Guess-grid__buttons">F10 </button>
+      <div class = "battleship-game__Guess-grid__label-G battleship-game__Guess-grid__labels"> G </div>
+      <button id ="battleship-game__Guess-grid__G1" class = "battleship-game__Guess-grid__G1 battleship-game__Guess-grid__buttons">G1 </button>
+      <button id ="battleship-game__Guess-grid__G2" class = "battleship-game__Guess-grid__G2 battleship-game__Guess-grid__buttons"> </button>
+      <button id ="battleship-game__Guess-grid__G3" class = "battleship-game__Guess-grid__G3 battleship-game__Guess-grid__buttons"> </button>
+      <button id ="battleship-game__Guess-grid__G4" class = "battleship-game__Guess-grid__G4 battleship-game__Guess-grid__buttons"> </button>
+      <button id ="battleship-game__Guess-grid__G5" class = "battleship-game__Guess-grid__G5 battleship-game__Guess-grid__buttons">G5 </button>
+      <button id ="battleship-game__Guess-grid__G6" class = "battleship-game__Guess-grid__G6 battleship-game__Guess-grid__buttons"> </button>
+      <button id ="battleship-game__Guess-grid__G7" class = "battleship-game__Guess-grid__G7 battleship-game__Guess-grid__buttons"> </button>
+      <button id ="battleship-game__Guess-grid__G8" class = "battleship-game__Guess-grid__G8 battleship-game__Guess-grid__buttons"> </button>
+      <button id ="battleship-game__Guess-grid__G9" class = "battleship-game__Guess-grid__G9 battleship-game__Guess-grid__buttons"> </button>
+      <button id ="battleship-game__Guess-grid__G10" class = "battleship-game__Guess-grid__G10 battleship-game__Guess-grid__buttons" >G10 </button>
+      <div class = "battleship-game__Guess-grid__label-H battleship-game__Guess-grid__labels"> H </div>
+      <button id ="battleship-game__Guess-grid__H1" class = "battleship-game__Guess-grid__H1 battleship-game__Guess-grid__buttons">H1 </button>
+      <button id ="battleship-game__Guess-grid__H2" class = "battleship-game__Guess-grid__H2 battleship-game__Guess-grid__buttons"> </button>
+      <button id ="battleship-game__Guess-grid__H3" class = "battleship-game__Guess-grid__H3 battleship-game__Guess-grid__buttons"> </button>
+      <button id ="battleship-game__Guess-grid__H4" class = "battleship-game__Guess-grid__H4 battleship-game__Guess-grid__buttons"> </button>
+      <button id ="battleship-game__Guess-grid__H5" class = "battleship-game__Guess-grid__H5 battleship-game__Guess-grid__buttons">H5 </button>
+      <button id ="battleship-game__Guess-grid__H6" class = "battleship-game__Guess-grid__H6 battleship-game__Guess-grid__buttons"> </button>
+      <button id ="battleship-game__Guess-grid__H7" class = "battleship-game__Guess-grid__H7 battleship-game__Guess-grid__buttons"> </button>
+      <button id ="battleship-game__Guess-grid__H8" class = "battleship-game__Guess-grid__H8 battleship-game__Guess-grid__buttons"> </button>
+      <button id ="battleship-game__Guess-grid__H9" class = "battleship-game__Guess-grid__H9 battleship-game__Guess-grid__buttons"> </button>
+      <button id ="battleship-game__Guess-grid__H10" class = "battleship-game__Guess-grid__H10 battleship-game__Guess-grid__buttons">H10 </button>
+      <div class = "battleship-game__Guess-grid__label-I battleship-game__Guess-grid__labels"> I </div>
+      <button id ="battleship-game__Guess-grid__I1" class = "battleship-game__Guess-grid__I1 battleship-game__Guess-grid__buttons">I1 </button>
+      <button id ="battleship-game__Guess-grid__I2" class = "battleship-game__Guess-grid__I2 battleship-game__Guess-grid__buttons" > </button>
+      <button id ="battleship-game__Guess-grid__I3" class = "battleship-game__Guess-grid__I3 battleship-game__Guess-grid__buttons"> </button>
+      <button id ="battleship-game__Guess-grid__I4" class = "battleship-game__Guess-grid__I4 battleship-game__Guess-grid__buttons"> </button>
+      <button id ="battleship-game__Guess-grid__I5" class = "battleship-game__Guess-grid__I5 battleship-game__Guess-grid__buttons">I5 </button>
+      <button id ="battleship-game__Guess-grid__I6" class = "battleship-game__Guess-grid__I6 battleship-game__Guess-grid__buttons"> </button>
+      <button id ="battleship-game__Guess-grid__I7" class = "battleship-game__Guess-grid__I7 battleship-game__Guess-grid__buttons" > </button>
+      <button id ="battleship-game__Guess-grid__I8" class = "battleship-game__Guess-grid__I8 battleship-game__Guess-grid__buttons"> </button>
+      <button id ="battleship-game__Guess-grid__I9" class = "battleship-game__Guess-grid__I9 battleship-game__Guess-grid__buttons"> </button>
+      <button id ="battleship-game__Guess-grid__I10" class = "battleship-game__Guess-grid__I10 battleship-game__Guess-grid__buttons"> I10</button>
+      <div class = "battleship-game__Guess-grid__label-J battleship-game__Guess-grid__labels"> J </div>
+      <button id ="battleship-game__Guess-grid__J1" class = "battleship-game__Guess-grid__J1 battleship-game__Guess-grid__buttons"> J1 </button>
+      <button id ="battleship-game__Guess-grid__J2" class = "battleship-game__Guess-grid__J2 battleship-game__Guess-grid__buttons"> </button>
+      <button id ="battleship-game__Guess-grid__J3" class = "battleship-game__Guess-grid__J3 battleship-game__Guess-grid__buttons"> </button>
+      <button id ="battleship-game__Guess-grid__J4" class = "battleship-game__Guess-grid__J4 battleship-game__Guess-grid__buttons"> </button>
+      <button id ="battleship-game__Guess-grid__J5" class = "battleship-game__Guess-grid__J5 battleship-game__Guess-grid__buttons"> J5</button>
+      <button id ="battleship-game__Guess-grid__J6" class = "battleship-game__Guess-grid__J6 battleship-game__Guess-grid__buttons"> </button>
+      <button id ="battleship-game__Guess-grid__J7" class = "battleship-game__Guess-grid__J7 battleship-game__Guess-grid__buttons"> </button>
+      <button id ="battleship-game__Guess-grid__J8" class = "battleship-game__Guess-grid__J8 battleship-game__Guess-grid__buttons"> </button>
+      <button id ="battleship-game__Guess-grid__J9" class = "battleship-game__Guess-grid__J9 battleship-game__Guess-grid__buttons"> </button>
+      <button id ="battleship-game__Guess-grid__J10" class = "battleship-game__Guess-grid__J10 battleship-game__Guess-grid__buttons"> J10</button>
     </div>
 
   </section>
-  
+  <script src="main.js"> </script> 
 </body>
 </html>
