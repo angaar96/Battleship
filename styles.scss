@@ -6,32 +6,63 @@
 body {
   width: 100vw;
   height: 100vh;
-  background: rgb(238,174,202);
-  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
   background-repeat: no-repeat;
   background-size: cover;
   display: flex; 
-  justify-content: center; 
-  align-items: center;   
+  flex-direction: column; 
+  align-items: center; 
+  background-image: url("./assets/images/battleship.jpg");       
 }
 
-.Player-grid {
+
+.battleship-game {
+  display: flex;
+  justify-content: space-around; 
+  width: 100vw; 
+  height: 50vh; 
+  align-items: center; 
+}
+
+.Player-grid, .Guess-grid {
   display: grid; 
   grid-template-columns: repeat(11, auto); 
   grid-template-rows: repeat(11, auto); 
   grid-gap: 10px; 
+  text-align: center; 
+  border: 2px solid white;
+  background: linear-gradient(#A7ABB7, #95AECC); 
+  padding: 10px; 
+  border-radius: 15px;  
 }
 
 .labels {
   text-align: center; 
+  width: 30px; 
+  height: 30px;
   display: flex; 
-  justify-content: center; 
-  align-items: center; 
-  width: 50px; 
-  height: 50px; 
+  align-items: center;  
 }
 
 .buttons {
-  width: 50px; 
-  height: 50px;
+  width: 30px; 
+  height: 30px;
+}
+
+.ri-ship-line {
+  font-size: 30px;
+  margin: 0; 
+  padding: 0;  
+}
+
+.battleship-title {
+  display: flex; 
+  align-items: center; 
+  &__text {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans'; 
+  } 
+  &__text, &__icon-1, &__icon-2 {
+    font-size: 80px; 
+    color: BLACK; 
+    margin: 5px; 
+  }
 }
