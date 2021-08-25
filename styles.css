@@ -14,15 +14,27 @@ body {
   background-image: url("./assets/images/battleship.jpg");
 }
 
+.battleship-title {
+  display: flex;
+  align-items: center;
+}
+.battleship-title__text {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans";
+}
+.battleship-title__text, .battleship-title__icon-1, .battleship-title__icon-2 {
+  font-size: 80px;
+  color: BLACK;
+  margin: 5px;
+}
+
 .battleship-game {
   display: flex;
   justify-content: space-around;
-  width: 100vw;
-  height: 50vh;
+  width: 100%;
+  height: 60%;
   align-items: center;
 }
-
-.Player-grid, .Guess-grid {
+.battleship-game__Player-grid, .battleship-game__Guess-grid {
   display: grid;
   grid-template-columns: repeat(11, auto);
   grid-template-rows: repeat(11, auto);
@@ -45,23 +57,4 @@ body {
 .buttons {
   width: 30px;
   height: 30px;
-}
-
-.ri-ship-line {
-  font-size: 30px;
-  margin: 0;
-  padding: 0;
-}
-
-.battleship-title {
-  display: flex;
-  align-items: center;
-}
-.battleship-title__text {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans";
-}
-.battleship-title__text, .battleship-title__icon-1, .battleship-title__icon-2 {
-  font-size: 80px;
-  color: BLACK;
-  margin: 5px;
 }
