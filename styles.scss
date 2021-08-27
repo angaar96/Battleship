@@ -97,7 +97,11 @@ body {
       font-size: 50px;  
       visibility: hidden;  
     }
-    &__log-content {
+    &__log-content-opponent {
+      font-size: 30px; 
+      margin-top: 20px;
+    }
+    &__log-content-player {
       font-size: 30px; 
       margin-top: 20px;
     }

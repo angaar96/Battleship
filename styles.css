@@ -99,7 +99,11 @@ body {
   font-size: 50px;
   visibility: hidden;
 }
-.battleship-game__info__log-content {
+.battleship-game__info__log-content-opponent {
+  font-size: 30px;
+  margin-top: 20px;
+}
+.battleship-game__info__log-content-player {
   font-size: 30px;
   margin-top: 20px;
 }
