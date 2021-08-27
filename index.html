@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="styles.css"> 
   <title>Battleship</title>
   <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/c1c2da4e28.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <div class="battleship-title"> 
@@ -145,9 +146,11 @@
     <div class = "battleship-game__info"> 
       <h3 class = "battleship-game__info__header"> Please select your ships on your board. <br>
         Then, press "Start Game" and place your guesses on the guess board.<br> 
-         The game ends when either your or your opponent's ships are fully sunk. </h3>
+         The game ends when either your or your opponent's ships are fully sunk.<br> </h3>
       <button class = "battleship-game__info__start-game-button"> Start Game </button>
-    </div>
+      <h2 class = "battleship-game__info__log-title" id = "battleship-game__info__log-title">  Game Log <i class="far fa-clipboard"></i> :  </h2>
+      <div class = "battleship-game__info__log-content"> </div>
+      </div>
     
 <!-- GUESSES GRID -->
     <div class = "battleship-game__Guess-grid">
