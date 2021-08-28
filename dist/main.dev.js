@@ -12,9 +12,7 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 var allPlayerButtons = document.querySelectorAll(".battleship-game__Player-grid__buttons");
 var allGuessButtons = document.querySelectorAll(".battleship-game__Guess-grid__buttons");
 var gameLogPlayer = document.querySelector(".battleship-game__info__log-content-player");
-var gameLogOpponent = document.querySelector(".battleship-game__info__log-content-opponent");
-var regexOpponentArray = /Guess/;
-var regexPlayerArray = /Player/; // Function defined separately so I can use removeEventListener later to lock in ship choices (not possible with anonymous functions)
+var gameLogOpponent = document.querySelector(".battleship-game__info__log-content-opponent"); // Function defined separately so I can use removeEventListener later to lock in ship choices (not possible with anonymous functions)
 
 function chooseShips(event) {
   event.target.classList.toggle("ship-location-choice");
@@ -22,9 +20,10 @@ function chooseShips(event) {
 
 allPlayerButtons.forEach(function (coordinate) {
   coordinate.addEventListener("click", chooseShips);
-});
+}); // Event listener to start the game 
+
 var startGameButton = document.querySelector(".battleship-game__info__start-game-button");
-startGameButton.addEventListener("click", runGame);
+startGameButton.addEventListener("click", runGame); // gameLogic handles game logic - made into own function to allow removal of event listener when game is won or lost. 
 
 function runGame() {
   // Lock ship choices in after "Start Game" is pressed. 
@@ -62,7 +61,6 @@ function runGame() {
   var opponentShipsIdArray = opponentShipsIndexArray.map(function (index) {
     return opponentBoardIdArray[index];
   });
-  console.log(opponentShipsIdArray);
   allGuessButtons.forEach(function (coordinate) {
     coordinate.addEventListener("click", function (e) {
       handlePlayerGuess(opponentShipsIdArray, e.target.id, e.target.classList); // Handle player guess
@@ -70,7 +68,8 @@ function runGame() {
       setTimeout(handleOpponentGuess(playerShipsIdArray, playerBoardIdArray), 1000); // Handle opponent guess, which is delayed slightly. 
     });
   });
-}
+} // Handle player guess section 
+
 
 var handlePlayerGuess = function handlePlayerGuess(shipsArr, id, classList) {
   // 1. Determine if it's a hit
@@ -79,15 +78,20 @@ var handlePlayerGuess = function handlePlayerGuess(shipsArr, id, classList) {
   if (isHit) {
     removeOpponentShip(shipsArr, id, classList);
     classList.toggle("ship-guess-choice-success");
+    gameLogPlayer.style.color = "green";
+    gameLogPlayer.style.fontSize = "30px";
     gameLogPlayer.innerHTML = "<h3> You got a hit! </h3>";
   } else {
     classList.toggle("ship-guess-choice-fail");
     gameLogPlayer.innerHTML = "<h3> You missed! </h3>";
+    gameLogPlayer.style.color = "red";
   } // 3. If The array length is zero - They have no more ships left - they loose!
 
 
   if (shipsArr.length == 0) {
     gameLogPlayer.innerHTML = "<h3> Well Done. You have won Battleship! <br> Your grand prize is: Nothing. </h3>";
+    gameLogPlayer.style.fontSize = "30px";
+    gameLogOpponent.innerHTML = "";
   }
 };
 
@@ -103,13 +107,12 @@ var removeOpponentShip = function removeOpponentShip(shipsArr, id) {
   var index = shipsArr.indexOf(id);
   shipsArr.splice(index, 1);
   return index > -1;
-};
+}; // Handle opponent guess section
+
 
 var handleOpponentGuess = function handleOpponentGuess(shipsArr, playerBoardArray) {
   // 0. Get the computer to generate a guess (done here to allow scope access later on)
-  // Grab all possible player coordinates 
-  // // Generate a random index from 0-100
-  //var item = items[Math.floor(Math.random()*items.length)];
+  // Generate a random index from 0-100
   var randomOpponentGuessIndex = Math.floor(Math.random() * playerBoardArray.length); // // Generate a random player coordinate ID using this index. 
 
   var randomOpponentIdGuess = playerBoardArray[randomOpponentGuessIndex]; // This has to run everytime the opponent guesses. Therefore, it's placed here. 
@@ -120,15 +123,21 @@ var handleOpponentGuess = function handleOpponentGuess(shipsArr, playerBoardArra
   if (isHit) {
     removePlayerShip(shipsArr, randomOpponentIdGuess);
     document.querySelector("#".concat(randomOpponentIdGuess)).classList.toggle("ship-guess-choice-success");
+    gameLogOpponent.style.color = "red";
+    gameLogOpponent.style.fontSize = "30px";
     gameLogOpponent.innerHTML = "<h3> You opponent hit you! </h3>";
   } else {
     document.querySelector("#".concat(randomOpponentIdGuess)).classList.toggle("ship-guess-choice-fail");
     gameLogOpponent.innerHTML = "<h3> Your opponent missed! </h3>";
+    gameLogOpponent.style.color = "green";
   } // 3. If The array length is zero - You have no ships left - You lose!
 
 
   if (shipsArr.length == 0) {
     gameLogOpponent.innerHTML = "<h3> Oh no! All your ships are sunk and you have lost Battleship. <br> Better luck next time! </h3>";
+    gameLogOpponent.style.color = "red";
+    gameLogOpponent.style.fontSize = "30px";
+    gameLogPlayer.innerHTML = "";
   } // 4. Stop guesses from being guessed again
 
 

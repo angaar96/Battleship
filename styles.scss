@@ -1,3 +1,5 @@
+$primary-font: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans';
+
 * {
   margin: 0;
   padding: 0; 
@@ -18,7 +20,7 @@ body {
   display: flex; 
   align-items: center; 
   &__text {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans'; 
+    font-family: $primary-font;
   } 
   &__text, &__icon-1, &__icon-2 {
     font-size: 80px; 
@@ -27,21 +29,25 @@ body {
   }
 }
 
-.battleship-headers {
-  display: flex; 
-  justify-content: space-around;
-  width: 100%; 
-}
-
 .battleship-game {
   display: flex;
   justify-content: space-around; 
-  width: 100%; 
+  width: 90%; 
   height: 60%; 
   align-items: center;
   &__start-game-button {
     width: 100px; 
     height: 50px; 
+  }
+  &__Player-board-container, &__Guess-board-container {
+    display: flex;
+    align-items: center; 
+    justify-content: space-around;
+    flex-direction: column;  
+  }
+  &__headers {
+    font-family: $primary-font;
+    margin-bottom: 10px; 
   }
   &__Player-grid, &__Guess-grid {
     display: grid; 
@@ -60,13 +66,13 @@ body {
   }
   &__Player-grid__labels, &__Guess-grid__labels {
     text-align: center; 
-    width: 30px; 
-    height: 30px;
+    // width: 30px; 
+    // height: 30px;
     display: flex; 
     align-items: center; 
     justify-content: center; 
     font-weight: bold; 
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans';   
+    font-family: $primary-font;   
   }
   &__info {
     display: flex; 
@@ -76,7 +82,7 @@ body {
     text-align: center; 
     margin-right: 10px; 
     margin-left: 10px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans'; 
+    font-family: $primary-font;
     &__start-game-button {
       font-size: 30px;  
       height: auto; 
@@ -93,16 +99,16 @@ body {
       transform: scale(1.1,1.1); 
     }   
     &__log-title {
-      margin-top: 30px;
-      font-size: 50px;  
+      margin-top: 50px;
+      font-size: 30px;  
       visibility: hidden;  
     }
     &__log-content-opponent {
-      font-size: 30px; 
+      font-size: 20px; 
       margin-top: 20px;
     }
     &__log-content-player {
-      font-size: 30px; 
+      font-size: 20px; 
       margin-top: 20px;
     }
     }
@@ -128,5 +134,79 @@ body {
   visibility: visible; 
 }
 
+// Media queries for responsiveness
 
+@media only screen and (max-width: 1200px) {
+  body {
+    justify-content: space-around; 
+  }
+  .battleship-game {
+    height: 100vh; 
+    flex-direction: column; 
+    width: 100vw;
+    justify-content: center; 
+    align-items: center; 
+  &__Player-grid, &__Guess-grid {
+    border: 2px solid white;
+    background: linear-gradient(#A7ABB7, #95AECC); 
+    padding: 10px; 
+    border-radius: 15px;  
+    width: 80vw; 
+    height: 40vh;
+    grid-gap: 0px; 
+  }
+  &__Player-grid__buttons, &__Guess-grid__buttons {
+    width: 10px; 
+    height: 10px;
+  }
+  &__info {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    flex-direction: column; 
+    text-align: center; 
+    font-family: $primary-font;
+    font-size: 10px; 
+    &__start-game-button {
+      font-size: 20px;  
+      height: auto; 
+      width: auto; 
+      border: 5px solid transparent; 
+      border-radius: 20px;
+      padding: 10px;  
+      font-weight: bold;
+      background: linear-gradient(#b3c6ff, #b3c6ff) padding-box, linear-gradient(#A7ABB7, #95AECC) border-box;   
+    }
+    &__start-game-button:hover {
+      opacity: 80%;
+      transform: scale(1.1,1.1); 
+    }   
+    &__log-title {
+      margin-top: 0px; 
+      font-size: 20px;  
+      visibility: hidden;  
+    }
+    &__log-content-opponent {
+      font-size: 10px; 
+      margin-top: 0px; 
+    }
+    &__log-content-player {
+      font-size: 10px;
+      margin-top: 0px;  
+    }
+    }
+
+  }
+  .battleship-title {
+    display: flex; 
+    align-items: center; 
+    &__text {
+      font-family: $primary-font;
+    } 
+    &__text, &__icon-1, &__icon-2 {
+      font-size: 20px; 
+      color: BLACK;
+    }
+  }
+}
 
