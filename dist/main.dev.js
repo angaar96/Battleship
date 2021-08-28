@@ -12,7 +12,9 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 var allPlayerButtons = document.querySelectorAll(".battleship-game__Player-grid__buttons");
 var allGuessButtons = document.querySelectorAll(".battleship-game__Guess-grid__buttons");
 var gameLogPlayer = document.querySelector(".battleship-game__info__log-content-player");
-var gameLogOpponent = document.querySelector(".battleship-game__info__log-content-opponent"); // Function defined separately so I can use removeEventListener later to lock in ship choices (not possible with anonymous functions)
+var gameLogOpponent = document.querySelector(".battleship-game__info__log-content-opponent");
+var playerGrid = document.querySelector(".battleship-game__Player-grid");
+var OpponentGrid = document.querySelector(".battleship-game__Guess-grid"); // Function defined separately so I can use removeEventListener later to lock in ship choices (not possible with anonymous functions)
 
 function chooseShips(event) {
   event.target.classList.toggle("ship-location-choice");
@@ -61,6 +63,7 @@ function runGame() {
   var opponentShipsIdArray = opponentShipsIndexArray.map(function (index) {
     return opponentBoardIdArray[index];
   });
+  console.log(opponentShipsIdArray);
   allGuessButtons.forEach(function (coordinate) {
     coordinate.addEventListener("click", function (e) {
       handlePlayerGuess(opponentShipsIdArray, e.target.id, e.target.classList); // Handle player guess
@@ -92,6 +95,8 @@ var handlePlayerGuess = function handlePlayerGuess(shipsArr, id, classList) {
     gameLogPlayer.innerHTML = "<h3> Well Done. You have won Battleship! <br> Your grand prize is: Nothing. </h3>";
     gameLogPlayer.style.fontSize = "30px";
     gameLogOpponent.innerHTML = "";
+    playerGrid.style.visibility = "hidden";
+    opponentGrid.style.visibility = "hidden";
   }
 };
 
@@ -138,6 +143,8 @@ var handleOpponentGuess = function handleOpponentGuess(shipsArr, playerBoardArra
     gameLogOpponent.style.color = "red";
     gameLogOpponent.style.fontSize = "30px";
     gameLogPlayer.innerHTML = "";
+    playerGrid.style.visibility = "hidden";
+    opponentGrid.style.visibility = "hidden";
   } // 4. Stop guesses from being guessed again
 
 

@@ -4,6 +4,8 @@ let allPlayerButtons = document.querySelectorAll(".battleship-game__Player-grid_
 let allGuessButtons = document.querySelectorAll(".battleship-game__Guess-grid__buttons");
 let gameLogPlayer = document.querySelector(".battleship-game__info__log-content-player");
 let gameLogOpponent = document.querySelector(".battleship-game__info__log-content-opponent");
+let playerGrid = document.querySelector(".battleship-game__Player-grid");
+let OpponentGrid = document.querySelector(".battleship-game__Guess-grid")
 
 
 // Function defined separately so I can use removeEventListener later to lock in ship choices (not possible with anonymous functions)
@@ -47,6 +49,7 @@ function runGame() {
   let opponentShipsIdArray = opponentShipsIndexArray.map(index => {
     return opponentBoardIdArray[index];
   })
+  console.log(opponentShipsIdArray);
   allGuessButtons.forEach(coordinate => {
     coordinate.addEventListener("click", (e) => {
       handlePlayerGuess(opponentShipsIdArray, e.target.id, e.target.classList); // Handle player guess
@@ -77,6 +80,8 @@ const handlePlayerGuess = (shipsArr, id, classList) => {
     gameLogPlayer.innerHTML = "<h3> Well Done. You have won Battleship! <br> Your grand prize is: Nothing. </h3>";
     gameLogPlayer.style.fontSize = "30px";
     gameLogOpponent.innerHTML = "";
+    playerGrid.style.visibility = "hidden";
+    opponentGrid.style.visibility = "hidden"
   } 
 }
 
@@ -123,6 +128,8 @@ const handleOpponentGuess = (shipsArr, playerBoardArray) => {
     gameLogOpponent.style.color = "red";
     gameLogOpponent.style.fontSize = "30px";
     gameLogPlayer.innerHTML = "";
+    playerGrid.style.visibility = "hidden";
+    opponentGrid.style.visibility = "hidden"
   }
   // 4. Stop guesses from being guessed again
   playerBoardArray.splice(randomOpponentGuessIndex, 1); // Remove the current guess from the player board array.  
