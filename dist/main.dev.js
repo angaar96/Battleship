@@ -139,7 +139,7 @@ var handleOpponentGuess = function handleOpponentGuess(shipsArr, playerBoardArra
     document.querySelector("#".concat(randomOpponentIdGuess)).classList.toggle("ship-guess-choice-fail");
     gameLogOpponent.innerHTML = "<h3> Your opponent missed! </h3>";
     gameLogOpponent.style.color = "green";
-  } // 3. If The array length is zero - You have no ships left - You lose!
+  } // 3. If the array length is zero - You have no ships left - You lose!
 
 
   if (shipsArr.length == 0) {
