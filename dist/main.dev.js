@@ -149,6 +149,9 @@ var handleOpponentGuess = function handleOpponentGuess(shipsArr, playerBoardArra
     playerGrid.style.visibility = "hidden";
     opponentGrid.style.visibility = "hidden";
     gameInstructions.style.visibility = "hidden";
+    boardHeaders.forEach(function (header) {
+      header.style.visibility = "hidden";
+    });
   } // 4. Stop guesses from being guessed again
 
 

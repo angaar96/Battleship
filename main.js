@@ -130,7 +130,10 @@ const handleOpponentGuess = (shipsArr, playerBoardArray) => {
     gameLogPlayer.innerHTML = "";
     playerGrid.style.visibility = "hidden";
     opponentGrid.style.visibility = "hidden";
-    gameInstructions.style.visibility = "hidden" 
+    gameInstructions.style.visibility = "hidden";
+    boardHeaders.forEach(header => {
+      header.style.visibility = "hidden"; 
+    })  
   }
   // 4. Stop guesses from being guessed again
   playerBoardArray.splice(randomOpponentGuessIndex, 1); // Remove the current guess from the player board array.  
