@@ -25,7 +25,7 @@ allPlayerButtons.forEach(function (coordinate) {
 }); // Event listener to start the game 
 
 var startGameButton = document.querySelector(".battleship-game__info__start-game-button");
-startGameButton.addEventListener("click", runGame); // gameLogic handles game logic - made into own function to allow removal of event listener when game is won or lost. 
+startGameButton.addEventListener("click", runGame);
 
 function runGame() {
   // Lock ship choices in after "Start Game" is pressed. 
@@ -33,7 +33,6 @@ function runGame() {
     coordinate.removeEventListener("click", chooseShips);
   });
   var gameLogTitle = document.querySelector(".battleship-game__info__log-title");
-  gameLogTitle.classList.toggle("display-log-title");
   startGameButton.classList.add("game-started"); // Store your ship choices.
 
   var playerShips = document.querySelectorAll(".ship-location-choice"); // Note this returns a node list. We need to use the spread operator to turn this into an array so that we can use the .filter or .map array iteration methods.
@@ -82,7 +81,6 @@ var handlePlayerGuess = function handlePlayerGuess(shipsArr, id, classList) {
     removeOpponentShip(shipsArr, id, classList);
     classList.toggle("ship-guess-choice-success");
     gameLogPlayer.style.color = "green";
-    gameLogPlayer.style.fontSize = "30px";
     gameLogPlayer.innerHTML = "<h3> You got a hit! </h3>";
   } else {
     classList.toggle("ship-guess-choice-fail");
@@ -93,7 +91,6 @@ var handlePlayerGuess = function handlePlayerGuess(shipsArr, id, classList) {
 
   if (shipsArr.length == 0) {
     gameLogPlayer.innerHTML = "<h3> Well Done. You have won Battleship! <br> Your grand prize is: Nothing. </h3>";
-    gameLogPlayer.style.fontSize = "30px";
     gameLogOpponent.innerHTML = "";
     playerGrid.style.visibility = "hidden";
     opponentGrid.style.visibility = "hidden";
@@ -129,7 +126,6 @@ var handleOpponentGuess = function handleOpponentGuess(shipsArr, playerBoardArra
     removePlayerShip(shipsArr, randomOpponentIdGuess);
     document.querySelector("#".concat(randomOpponentIdGuess)).classList.toggle("ship-guess-choice-success");
     gameLogOpponent.style.color = "red";
-    gameLogOpponent.style.fontSize = "30px";
     gameLogOpponent.innerHTML = "<h3> You opponent hit you! </h3>";
   } else {
     document.querySelector("#".concat(randomOpponentIdGuess)).classList.toggle("ship-guess-choice-fail");
@@ -141,7 +137,6 @@ var handleOpponentGuess = function handleOpponentGuess(shipsArr, playerBoardArra
   if (shipsArr.length == 0) {
     gameLogOpponent.innerHTML = "<h3> Oh no! All your ships are sunk and you have lost Battleship. <br> Better luck next time! </h3>";
     gameLogOpponent.style.color = "red";
-    gameLogOpponent.style.fontSize = "30px";
     gameLogPlayer.innerHTML = "";
     playerGrid.style.visibility = "hidden";
     opponentGrid.style.visibility = "hidden";
