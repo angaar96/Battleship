@@ -123,7 +123,7 @@ const handleOpponentGuess = (shipsArr, playerBoardArray) => {
     gameLogOpponent.innerHTML = "<h3> Your opponent missed! </h3>";
     gameLogOpponent.style.color = "green";
   }
-  // 3. If The array length is zero - You have no ships left - You lose!
+  // 3. If the array length is zero - You have no ships left - You lose!
   if (shipsArr.length == 0) {
     gameLogOpponent.innerHTML = "<h3> Oh no! All your ships are sunk and you have lost Battleship. <br> Better luck next time! </h3>";
     gameLogOpponent.style.color = "red";
