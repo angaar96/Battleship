@@ -5,7 +5,7 @@ let allGuessButtons = document.querySelectorAll(".battleship-game__Guess-grid__b
 let gameLogPlayer = document.querySelector(".battleship-game__info__log-content-player");
 let gameLogOpponent = document.querySelector(".battleship-game__info__log-content-opponent");
 let playerGrid = document.querySelector(".battleship-game__Player-grid");
-let OpponentGrid = document.querySelector(".battleship-game__Guess-grid")
+let opponentGrid = document.querySelector(".battleship-game__Guess-grid")
 
 
 // Function defined separately so I can use removeEventListener later to lock in ship choices (not possible with anonymous functions)
