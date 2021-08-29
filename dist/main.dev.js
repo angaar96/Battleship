@@ -30,7 +30,7 @@ allPlayerButtons.forEach(function (coordinate) {
 startGameButton.addEventListener("click", runGame);
 
 function runGame() {
-  // Remove start game button 
+  // Remove start game button after game is started.  
   startGameButton.style.visibility = "hidden"; // Lock ship choices in after "Start Game" is pressed. 
 
   allPlayerButtons.forEach(function (coordinate) {
