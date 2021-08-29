@@ -14,7 +14,10 @@ var allGuessButtons = document.querySelectorAll(".battleship-game__Guess-grid__b
 var gameLogPlayer = document.querySelector(".battleship-game__info__log-content-player");
 var gameLogOpponent = document.querySelector(".battleship-game__info__log-content-opponent");
 var playerGrid = document.querySelector(".battleship-game__Player-grid");
-var opponentGrid = document.querySelector(".battleship-game__Guess-grid"); // Function defined separately so I can use removeEventListener later to lock in ship choices (not possible with anonymous functions)
+var opponentGrid = document.querySelector(".battleship-game__Guess-grid");
+var gameInstructions = document.querySelector(".battleship-game__info__header");
+var boardHeaders = document.querySelectorAll(".battleship-game__headers");
+var startGameButton = document.querySelector(".battleship-game__info__start-game-button"); // Function defined separately so I can use removeEventListener later to lock in ship choices (not possible with anonymous functions)
 
 function chooseShips(event) {
   event.target.classList.toggle("ship-location-choice");
@@ -24,11 +27,12 @@ allPlayerButtons.forEach(function (coordinate) {
   coordinate.addEventListener("click", chooseShips);
 }); // Event listener to start the game 
 
-var startGameButton = document.querySelector(".battleship-game__info__start-game-button");
 startGameButton.addEventListener("click", runGame);
 
 function runGame() {
-  // Lock ship choices in after "Start Game" is pressed. 
+  // Remove start game button 
+  startGameButton.style.visibility = "hidden"; // Lock ship choices in after "Start Game" is pressed. 
+
   allPlayerButtons.forEach(function (coordinate) {
     coordinate.removeEventListener("click", chooseShips);
   });
@@ -94,6 +98,10 @@ var handlePlayerGuess = function handlePlayerGuess(shipsArr, id, classList) {
     gameLogOpponent.innerHTML = "";
     playerGrid.style.visibility = "hidden";
     opponentGrid.style.visibility = "hidden";
+    gameInstructions.style.visibility = "hidden";
+    boardHeaders.forEach(function (header) {
+      header.style.visibility = "hidden";
+    });
   }
 };
 
@@ -140,6 +148,7 @@ var handleOpponentGuess = function handleOpponentGuess(shipsArr, playerBoardArra
     gameLogPlayer.innerHTML = "";
     playerGrid.style.visibility = "hidden";
     opponentGrid.style.visibility = "hidden";
+    gameInstructions.style.visibility = "hidden";
   } // 4. Stop guesses from being guessed again
 
 

@@ -6,6 +6,9 @@ let gameLogPlayer = document.querySelector(".battleship-game__info__log-content-
 let gameLogOpponent = document.querySelector(".battleship-game__info__log-content-opponent");
 let playerGrid = document.querySelector(".battleship-game__Player-grid");
 let opponentGrid = document.querySelector(".battleship-game__Guess-grid")
+let gameInstructions = document.querySelector(".battleship-game__info__header");
+let boardHeaders = document.querySelectorAll(".battleship-game__headers");  
+const startGameButton = document.querySelector(".battleship-game__info__start-game-button"); 
 
 
 // Function defined separately so I can use removeEventListener later to lock in ship choices (not possible with anonymous functions)
@@ -19,10 +22,11 @@ allPlayerButtons.forEach(coordinate => {
 })
 
 // Event listener to start the game 
-const startGameButton = document.querySelector(".battleship-game__info__start-game-button"); 
 startGameButton.addEventListener("click", runGame);
 
 function runGame() {
+  // Remove start game button 
+  startGameButton.style.visibility = "hidden"; 
   // Lock ship choices in after "Start Game" is pressed. 
   allPlayerButtons.forEach(coordinate => {
     coordinate.removeEventListener("click", chooseShips);
@@ -75,7 +79,11 @@ const handlePlayerGuess = (shipsArr, id, classList) => {
     gameLogPlayer.innerHTML = "<h3> Well Done. You have won Battleship! <br> Your grand prize is: Nothing. </h3>";
     gameLogOpponent.innerHTML = "";
     playerGrid.style.visibility = "hidden";
-    opponentGrid.style.visibility = "hidden"
+    opponentGrid.style.visibility = "hidden";
+    gameInstructions.style.visibility = "hidden";
+    boardHeaders.forEach(header => {
+      header.style.visibility = "hidden"; 
+    })  
   } 
 }
 
@@ -121,7 +129,8 @@ const handleOpponentGuess = (shipsArr, playerBoardArray) => {
     gameLogOpponent.style.color = "red";
     gameLogPlayer.innerHTML = "";
     playerGrid.style.visibility = "hidden";
-    opponentGrid.style.visibility = "hidden"
+    opponentGrid.style.visibility = "hidden";
+    gameInstructions.style.visibility = "hidden" 
   }
   // 4. Stop guesses from being guessed again
   playerBoardArray.splice(randomOpponentGuessIndex, 1); // Remove the current guess from the player board array.  
