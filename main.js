@@ -11,7 +11,7 @@ let boardHeaders = document.querySelectorAll(".battleship-game__headers");
 const startGameButton = document.querySelector(".battleship-game__info__start-game-button"); 
 
 
-// Function defined separately so I can use removeEventListener later to lock in ship choices (not possible with anonymous functions)
+// This function is defined separately so I can use removeEventListener later to lock in ship choices (not possible with anonymous functions)
 
 function chooseShips(event) {
   event.target.classList.toggle("ship-location-choice");

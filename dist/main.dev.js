@@ -17,7 +17,7 @@ var playerGrid = document.querySelector(".battleship-game__Player-grid");
 var opponentGrid = document.querySelector(".battleship-game__Guess-grid");
 var gameInstructions = document.querySelector(".battleship-game__info__header");
 var boardHeaders = document.querySelectorAll(".battleship-game__headers");
-var startGameButton = document.querySelector(".battleship-game__info__start-game-button"); // Function defined separately so I can use removeEventListener later to lock in ship choices (not possible with anonymous functions)
+var startGameButton = document.querySelector(".battleship-game__info__start-game-button"); // This function is defined separately so I can use removeEventListener later to lock in ship choices (not possible with anonymous functions)
 
 function chooseShips(event) {
   event.target.classList.toggle("ship-location-choice");
