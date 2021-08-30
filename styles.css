@@ -41,8 +41,8 @@ body {
 .battleship-game__Player-board-container, .battleship-game__Guess-board-container {
   display: flex;
   align-items: center;
-  justify-content: space-around;
   flex-direction: column;
+  justify-content: center;
 }
 .battleship-game__headers {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans";
@@ -146,11 +146,11 @@ body {
     font-weight: bolder;
   }
   .battleship-game__Player-grid__buttons, .battleship-game__Guess-grid__buttons {
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
   }
   .battleship-game__Player-grid__labels, .battleship-game__Guess-grid__labels {
-    font-size: 25px;
+    font-size: 20px;
   }
   .battleship-game__info {
     justify-content: center;

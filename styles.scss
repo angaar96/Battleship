@@ -42,8 +42,8 @@ body {
   &__Player-board-container, &__Guess-board-container {
     display: flex;
     align-items: center; 
-    justify-content: space-around;
-    flex-direction: column;  
+    flex-direction: column;
+    justify-content: center;   
   }
   &__headers {
     font-family: $primary-font;
@@ -148,11 +148,11 @@ body {
     font-weight: bolder;  
   }
   &__Player-grid__buttons, &__Guess-grid__buttons {
-    width: 20px; 
-    height: 20px;
+    width: 15px; 
+    height: 15px;
   }
   &__Player-grid__labels, &__Guess-grid__labels { 
-    font-size: 25px;   
+    font-size: 20px;   
   }
   &__info {
     justify-content: center;  
