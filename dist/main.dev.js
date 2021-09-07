@@ -9,12 +9,12 @@ function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.
 function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
 
 // Some variables that are used multiple times in different places. 
-var allPlayerButtons = document.querySelectorAll(".battleship-game__Player-grid__buttons");
-var allGuessButtons = document.querySelectorAll(".battleship-game__Guess-grid__buttons");
+var allPlayerButtons = document.querySelectorAll(".Player-grid__buttons");
+var allGuessButtons = document.querySelectorAll(".Guess-grid__buttons");
 var gameLogPlayer = document.querySelector(".battleship-game__info__log-content-player");
 var gameLogOpponent = document.querySelector(".battleship-game__info__log-content-opponent");
-var playerGrid = document.querySelector(".battleship-game__Player-grid");
-var opponentGrid = document.querySelector(".battleship-game__Guess-grid");
+var playerGrid = document.querySelector(".Player-grid");
+var opponentGrid = document.querySelector(".Guess-grid");
 var gameInstructions = document.querySelector(".battleship-game__info__header");
 var boardHeaders = document.querySelectorAll(".battleship-game__headers");
 var startGameButton = document.querySelector(".battleship-game__info__start-game-button"); // This function is defined separately so I can use removeEventListener later to lock in ship choices (not possible with anonymous functions)
