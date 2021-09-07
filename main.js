@@ -1,11 +1,11 @@
 // Some variables that are used multiple times in different places. 
 
-let allPlayerButtons = document.querySelectorAll(".battleship-game__Player-grid__buttons");
-let allGuessButtons = document.querySelectorAll(".battleship-game__Guess-grid__buttons");
+let allPlayerButtons = document.querySelectorAll(".Player-grid__buttons");
+let allGuessButtons = document.querySelectorAll(".Guess-grid__buttons");
 let gameLogPlayer = document.querySelector(".battleship-game__info__log-content-player");
 let gameLogOpponent = document.querySelector(".battleship-game__info__log-content-opponent");
-let playerGrid = document.querySelector(".battleship-game__Player-grid");
-let opponentGrid = document.querySelector(".battleship-game__Guess-grid")
+let playerGrid = document.querySelector(".Player-grid");
+let opponentGrid = document.querySelector(".Guess-grid")
 let gameInstructions = document.querySelector(".battleship-game__info__header");
 let boardHeaders = document.querySelectorAll(".battleship-game__headers");  
 const startGameButton = document.querySelector(".battleship-game__info__start-game-button"); 
@@ -23,6 +23,8 @@ allPlayerButtons.forEach(coordinate => {
 
 // Event listener to start the game 
 startGameButton.addEventListener("click", runGame);
+
+
 
 function runGame() {
   // Remove start game button after game is started.  
