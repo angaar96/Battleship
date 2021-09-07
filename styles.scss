@@ -49,7 +49,7 @@ body {
     font-family: $primary-font;
     margin-bottom: 10px; 
   }
-  &__Player-grid, &__Guess-grid {
+  .Player-grid, .Guess-grid {
     display: grid; 
     grid-template-columns: repeat(11, auto); 
     grid-template-rows: repeat(11, auto); 
@@ -62,11 +62,11 @@ body {
     justify-items: center; 
     align-items: center; 
   }
-  &__Player-grid__buttons, &__Guess-grid__buttons {
+  .Player-grid__buttons, .Guess-grid__buttons {
     width: 30px; 
     height: 30px;
   }
-  &__Player-grid__labels, &__Guess-grid__labels { 
+  .Player-grid__labels, .Guess-grid__labels { 
     font-weight: bold; 
     font-family: $primary-font;   
   }
@@ -136,7 +136,7 @@ body {
     flex-direction: column; 
     width: 100vw;
     justify-content: center; 
-  &__Player-grid, &__Guess-grid {
+  .Player-grid, .Guess-grid {
     padding: 3px; 
     width: 90vw; 
     height: 33vh;
@@ -147,11 +147,11 @@ body {
     font-size: 20px;
     font-weight: bolder;  
   }
-  &__Player-grid__buttons, &__Guess-grid__buttons {
+  .Player-grid__buttons, .Guess-grid__buttons {
     width: 15px; 
     height: 15px;
   }
-  &__Player-grid__labels, &__Guess-grid__labels { 
+  .Player-grid__labels, .Guess-grid__labels { 
     font-size: 20px;   
   }
   &__info {
@@ -190,11 +190,11 @@ body {
   &__headers {
     font-size: 10px;  
   }
-  &__Player-grid__buttons, &__Guess-grid__buttons {
+  .Player-grid__buttons, .Guess-grid__buttons {
     width: 10px; 
     height: 10px;
   }
-  &__Player-grid__labels, &__Guess-grid__labels { 
+  .Player-grid__labels, .Guess-grid__labels { 
     font-size: 15px;   
   }
   &__info { 
