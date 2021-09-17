@@ -24,40 +24,55 @@ allPlayerButtons.forEach(coordinate => {
 // Event listener to start the game 
 startGameButton.addEventListener("click", runGame);
 
-
-
-function runGame() {
+function gameSetup() {
   // Remove start game button after game is started.  
-  startGameButton.style.visibility = "hidden"; 
+  startGameButton.classList.add("game-started");
   // Lock ship choices in after "Start Game" is pressed. 
   allPlayerButtons.forEach(coordinate => {
     coordinate.removeEventListener("click", chooseShips);
   })
-  let gameLogTitle = document.querySelector(".battleship-game__info__log-title");
-  startGameButton.classList.add("game-started"); 
-  // Store your ship choices.
-  let playerShips = document.querySelectorAll(".ship-location-choice"); // Note this returns a node list. We need to use the spread operator to turn this into an array so that we can use the .filter or .map array iteration methods.
-  let playerShipsIdArray = [...playerShips].map(ship => {return ship.id}); // Make new array with all ship choices 
-  const numberOfShips = playerShipsIdArray.length; // Get number of ships (used to make an equal number of ships for opponent) 
-  const playerBoardIdArray = [...allPlayerButtons].map(coordinate => {
-    return coordinate.id;
-  }); 
-  let opponentBoardIdArray = [...allGuessButtons].map(button => {return button.id});
-  let opponentShipsIndexArray = []; // Make this equal to an array containing indexes chosen randomly from 0-100. Amount of indexes generated is equal to number of ships chosen by the player. 
-  // Use a for loop to generate this. 
-  for (i=0; i<numberOfShips; i++) {
-    opponentShipsIndexArray.push(Math.floor(Math.random() * 100));
-  }
-  let opponentShipsIdArray = opponentShipsIndexArray.map(index => {
-    return opponentBoardIdArray[index];
-  })
-  console.log(opponentShipsIdArray);
+}
+
+function generateGameComponents() {
+    // Store player ship choices.
+    let playerShips = document.querySelectorAll(".ship-location-choice"); // Note this returns a node list. We need to use the spread operator to turn this into an array so that we can use the .filter or .map array iteration methods.
+    let playerShipsIdArray = [...playerShips].map(ship => {return ship.id}); // Make new array with all ship choices 
+    const numberOfShips = playerShipsIdArray.length; // Get number of ships (used to make an equal number of ships for opponent) 
+    const playerBoardIdArray = [...allPlayerButtons].map(coordinate => {
+      return coordinate.id;
+    }); 
+    let opponentBoardIdArray = [...allGuessButtons].map(button => {return button.id});
+    let opponentShipsIndexArray = []; // This will be an array generated with a for loop to containing indexes chosen randomly from 0-100. 
+    // The amount of indexes generated will be equal to the number of ships chosen by the player. 
+    for (i=0; i<numberOfShips; i++) {
+      opponentShipsIndexArray.push(Math.floor(Math.random() * 100));
+    }
+    let opponentShipsIdArray = opponentShipsIndexArray.map(index => {
+      return opponentBoardIdArray[index];
+    })
+    let gameComponentsObj = {
+      "playerShipsIdArray" : playerShipsIdArray,
+      "playerBoardIdArray" : playerBoardIdArray,
+      "opponentShipsIdArray" : opponentShipsIdArray
+    }
+    console.log(opponentShipsIdArray); 
+    return gameComponentsObj;
+}
+
+function gameLogic(gameComponents) {
   allGuessButtons.forEach(coordinate => {
     coordinate.addEventListener("click", (e) => {
-      handlePlayerGuess(opponentShipsIdArray, e.target.id, e.target.classList); // Handle player guess
-      setTimeout(handleOpponentGuess(playerShipsIdArray, playerBoardIdArray), 1000); // Handle opponent guess, which is delayed slightly. 
+      handlePlayerGuess(gameComponents.opponentShipsIdArray, e.target.id, e.target.classList); // Handle player guess
+      setTimeout(handleOpponentGuess(gameComponents.playerShipsIdArray, gameComponents.playerBoardIdArray), 1000); 
+      // Handle opponent guess, which is delayed slightly. 
     });
   })
+}
+
+function runGame() {
+  gameSetup();
+  const gameComponents = generateGameComponents();
+  gameLogic(gameComponents);  
 }
 
 // Handle player guess section 
