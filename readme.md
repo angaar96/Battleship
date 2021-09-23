@@ -8,6 +8,8 @@ Face against the computer in a daring game of chance as you attempt to locate an
 
 Play on PC or mobile.
 
+Thanks to Will Esayenko on Unsplash for the background image. 
+
 ## Instructions
 
 Please select your ships on your board, then press "Start Game" and place your first guess on the guess board.
