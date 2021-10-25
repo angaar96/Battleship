@@ -33,7 +33,7 @@ let gameInstructions = document.querySelector(".battleship-game__info__header");
 let boardHeaders = document.querySelectorAll(".battleship-game__headers");  
 const startGameButton = document.querySelector(".battleship-game__info__start-game-button"); 
 
-// This function is defined separately so I can use removeEventListener later to lock in ship choices (not possible with anonymous functions)
+// This function is defined separately so we can use removeEventListener later to lock in the ship choices (not possible with anonymous functions)
 
 const chooseShips = (event) => {
   event.target.classList.toggle("ship-location-choice");
@@ -88,8 +88,6 @@ const gameLogic = (gameComponents) => {
   })
 }
 
-
-
 const runGame = () => {
   gameSetup();
   const gameComponents = generateGameComponents();
@@ -103,10 +101,10 @@ startGameButton.addEventListener("click", runGame);
 
 const handlePlayerGuess = (shipsArr, id, classList) => {
   // 1. Determine if it's a hit
-  const isHit = isValidHitOnOpponent(shipsArr, id); 
+  const isHit = isValidHit(shipsArr, id); 
   // 2. For valid hits, remove it from the array and display it on the game log. 
   if (isHit) {
-    removeOpponentShip(shipsArr, id, classList);
+    removeShip(shipsArr, id, classList);
     classList.toggle("ship-guess-choice-success");
     gameLogPlayer.style.color = "green";
     gameLogPlayer.innerHTML = "<h3> You got a hit! </h3>";
@@ -128,7 +126,7 @@ const handlePlayerGuess = (shipsArr, id, classList) => {
   } 
 }
 
-const isValidHitOnOpponent = (shipsArr, id) => {
+const isValidHit = (shipsArr, id) => {
   if (shipsArr.includes(id)) {
     return true;
   } else {
@@ -136,7 +134,7 @@ const isValidHitOnOpponent = (shipsArr, id) => {
   }
 }
 
-const removeOpponentShip = (shipsArr, id) => {
+const removeShip = (shipsArr, id) => {
   let index = shipsArr.indexOf(id);
   shipsArr.splice(index, 1);
   return index > -1;
@@ -151,10 +149,10 @@ const handleOpponentGuess = (shipsArr, playerBoardArray) => {
   // // Generate a random player coordinate ID using this index. 
   let randomOpponentIdGuess = playerBoardArray[randomOpponentGuessIndex]; // This has to run everytime the opponent guesses. Therefore, it's placed here. 
   // 1. Determine if it's a hit
-  const isHit = isValidHitOnPlayer(shipsArr, randomOpponentIdGuess); 
+  const isHit = isValidHit(shipsArr, randomOpponentIdGuess); 
   // 2. For valid hits, remove it from the array and display it on the game log.
   if (isHit) {
-    removePlayerShip(shipsArr, randomOpponentIdGuess);
+    removeShip(shipsArr, randomOpponentIdGuess);
     document.querySelector(`#${randomOpponentIdGuess}`).classList.toggle("ship-guess-choice-success");
     gameLogOpponent.style.color = "red";
     gameLogOpponent.innerHTML = "<h3> You opponent hit you! </h3>";
@@ -180,17 +178,6 @@ const handleOpponentGuess = (shipsArr, playerBoardArray) => {
   playerBoardArray.splice(randomOpponentGuessIndex, 1); // Remove the current guess from the player board array.  
 }
 
-const isValidHitOnPlayer = (shipsArr, IdGuess) => {
-  if (shipsArr.includes(IdGuess)) {
-    return true;
-  } else {
-    return false;
-  }
-}
 
-const removePlayerShip = (shipsArr, IdGuess) => {
-  let index = shipsArr.indexOf(IdGuess);
-  shipsArr.splice(index, 1); // Remove ship from player ships array
-  return index > -1;
-}
+
 
