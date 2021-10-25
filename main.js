@@ -1,3 +1,26 @@
+let allPlayerLabels = document.querySelectorAll(".Player-grid__labels"); 
+let allGuessLabels = document.querySelectorAll(".Guess-grid__labels"); 
+
+
+// Setup player and guess grids 
+
+const setupGrid = (letterArr, gridName, labelArr) => {
+  let newButton = document.createElement("button");
+    for (let i=0; i<labelArr.length; i++) {
+      for (let j=10; j>0; j--) {
+        newButton = document.createElement("button");
+        newButton.setAttribute("id", `${gridName}__${letterArr[i]}${j}`);
+        newButton.setAttribute("class", `${gridName}__buttons`);
+        labelArr[i].after(newButton);
+        // labelArr[i].parentNode.insertBefore(newButton, labelArr[i].nextSibling);
+      }
+    }
+}
+
+setupGrid(["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"], "Player-grid", allPlayerLabels);
+setupGrid(["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"], "Guess-grid", allGuessLabels);
+
+
 // Some variables that are used multiple times in different places. 
 
 let allPlayerButtons = document.querySelectorAll(".Player-grid__buttons");
@@ -10,10 +33,9 @@ let gameInstructions = document.querySelector(".battleship-game__info__header");
 let boardHeaders = document.querySelectorAll(".battleship-game__headers");  
 const startGameButton = document.querySelector(".battleship-game__info__start-game-button"); 
 
-
 // This function is defined separately so I can use removeEventListener later to lock in ship choices (not possible with anonymous functions)
 
-function chooseShips(event) {
+const chooseShips = (event) => {
   event.target.classList.toggle("ship-location-choice");
 }
 
@@ -21,10 +43,7 @@ allPlayerButtons.forEach(coordinate => {
   coordinate.addEventListener("click", chooseShips)
 })
 
-// Event listener to start the game 
-startGameButton.addEventListener("click", runGame);
-
-function gameSetup() {
+const gameSetup = () => {
   // Remove start game button after game is started.  
   startGameButton.classList.add("game-started");
   // Lock ship choices in after "Start Game" is pressed. 
@@ -33,7 +52,7 @@ function gameSetup() {
   })
 }
 
-function generateGameComponents() {
+const generateGameComponents = () => {
     // Store player ship choices.
     let playerShips = document.querySelectorAll(".ship-location-choice"); // Note this returns a node list. We need to use the spread operator to turn this into an array so that we can use the .filter or .map array iteration methods.
     let playerShipsIdArray = [...playerShips].map(ship => {return ship.id}); // Make new array with all ship choices 
@@ -59,7 +78,7 @@ function generateGameComponents() {
     return gameComponentsObj;
 }
 
-function gameLogic(gameComponents) {
+const gameLogic = (gameComponents) => {
   allGuessButtons.forEach(coordinate => {
     coordinate.addEventListener("click", (e) => {
       handlePlayerGuess(gameComponents.opponentShipsIdArray, e.target.id, e.target.classList); // Handle player guess
@@ -69,11 +88,16 @@ function gameLogic(gameComponents) {
   })
 }
 
-function runGame() {
+
+
+const runGame = () => {
   gameSetup();
   const gameComponents = generateGameComponents();
   gameLogic(gameComponents);  
 }
+
+// Event listener to start the game 
+startGameButton.addEventListener("click", runGame);
 
 // Handle player guess section 
 
@@ -169,3 +193,4 @@ const removePlayerShip = (shipsArr, IdGuess) => {
   shipsArr.splice(index, 1); // Remove ship from player ships array
   return index > -1;
 }
+

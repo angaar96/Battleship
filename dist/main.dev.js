@@ -8,7 +8,27 @@ function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.
 
 function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
 
-// Some variables that are used multiple times in different places. 
+var allPlayerLabels = document.querySelectorAll(".Player-grid__labels");
+var allGuessLabels = document.querySelectorAll(".Guess-grid__labels"); // Setup player and guess grids 
+
+var setupGrid = function setupGrid(letterArr, gridName, labelArr) {
+  var newButton = document.createElement("button");
+
+  for (var _i = 0; _i < labelArr.length; _i++) {
+    for (var j = 10; j > 0; j--) {
+      newButton = document.createElement("button");
+      newButton.setAttribute("id", "".concat(gridName, "__").concat(letterArr[_i]).concat(j));
+      newButton.setAttribute("class", "".concat(gridName, "__buttons"));
+
+      labelArr[_i].after(newButton); // labelArr[i].parentNode.insertBefore(newButton, labelArr[i].nextSibling);
+
+    }
+  }
+};
+
+setupGrid(["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"], "Player-grid", allPlayerLabels);
+setupGrid(["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"], "Guess-grid", allGuessLabels); // Some variables that are used multiple times in different places. 
+
 var allPlayerButtons = document.querySelectorAll(".Player-grid__buttons");
 var allGuessButtons = document.querySelectorAll(".Guess-grid__buttons");
 var gameLogPlayer = document.querySelector(".battleship-game__info__log-content-player");
@@ -19,26 +39,24 @@ var gameInstructions = document.querySelector(".battleship-game__info__header");
 var boardHeaders = document.querySelectorAll(".battleship-game__headers");
 var startGameButton = document.querySelector(".battleship-game__info__start-game-button"); // This function is defined separately so I can use removeEventListener later to lock in ship choices (not possible with anonymous functions)
 
-function chooseShips(event) {
+var chooseShips = function chooseShips(event) {
   event.target.classList.toggle("ship-location-choice");
-}
+};
 
 allPlayerButtons.forEach(function (coordinate) {
   coordinate.addEventListener("click", chooseShips);
-}); // Event listener to start the game 
+});
 
-startGameButton.addEventListener("click", runGame);
-
-function gameSetup() {
+var gameSetup = function gameSetup() {
   // Remove start game button after game is started.  
   startGameButton.classList.add("game-started"); // Lock ship choices in after "Start Game" is pressed. 
 
   allPlayerButtons.forEach(function (coordinate) {
     coordinate.removeEventListener("click", chooseShips);
   });
-}
+};
 
-function generateGameComponents() {
+var generateGameComponents = function generateGameComponents() {
   // Store player ship choices.
   var playerShips = document.querySelectorAll(".ship-location-choice"); // Note this returns a node list. We need to use the spread operator to turn this into an array so that we can use the .filter or .map array iteration methods.
 
@@ -74,9 +92,9 @@ function generateGameComponents() {
   };
   console.log(opponentShipsIdArray);
   return gameComponentsObj;
-}
+};
 
-function gameLogic(gameComponents) {
+var gameLogic = function gameLogic(gameComponents) {
   allGuessButtons.forEach(function (coordinate) {
     coordinate.addEventListener("click", function (e) {
       handlePlayerGuess(gameComponents.opponentShipsIdArray, e.target.id, e.target.classList); // Handle player guess
@@ -84,14 +102,16 @@ function gameLogic(gameComponents) {
       setTimeout(handleOpponentGuess(gameComponents.playerShipsIdArray, gameComponents.playerBoardIdArray), 1000); // Handle opponent guess, which is delayed slightly. 
     });
   });
-}
+};
 
-function runGame() {
+var runGame = function runGame() {
   gameSetup();
   var gameComponents = generateGameComponents();
   gameLogic(gameComponents);
-} // Handle player guess section 
+}; // Event listener to start the game 
 
+
+startGameButton.addEventListener("click", runGame); // Handle player guess section 
 
 var handlePlayerGuess = function handlePlayerGuess(shipsArr, id, classList) {
   // 1. Determine if it's a hit

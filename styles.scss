@@ -66,7 +66,7 @@ body {
     width: 30px; 
     height: 30px;
   }
-  .Player-grid__labels, .Guess-grid__labels { 
+  .Player-grid__labels, .Guess-grid__labels, .Guess-grid__number-labels, .Player-grid__number-labels { 
     font-weight: bold; 
     font-family: $primary-font;   
   }

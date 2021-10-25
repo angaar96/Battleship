@@ -65,7 +65,7 @@ body {
   width: 30px;
   height: 30px;
 }
-.battleship-game .Player-grid__labels, .battleship-game .Guess-grid__labels {
+.battleship-game .Player-grid__labels, .battleship-game .Guess-grid__labels, .battleship-game .Guess-grid__number-labels, .battleship-game .Player-grid__number-labels {
   font-weight: bold;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans";
 }
