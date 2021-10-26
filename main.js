@@ -1,10 +1,30 @@
-let allPlayerLabels = document.querySelectorAll(".Player-grid__labels"); 
-let allGuessLabels = document.querySelectorAll(".Guess-grid__labels"); 
+// Setup grid function defined below.
 
-
-// Setup player and guess grids 
-
-const setupGrid = (letterArr, gridName, labelArr) => {
+const setupGrid = (letterArr, gridName, labelArr, parentGridDiv) => {
+  let newDiv = document.createElement("div");
+  // Generate number labels
+  for (let i=10; i>=0; i--) {
+    newDiv = document.createElement("div");
+    newDiv.setAttribute("class", `${gridName}__number-labels ${gridName}__label-${i}`);
+    if (i != 0) {
+      newDiv.innerHTML = i; 
+    }
+    parentGridDiv.prepend(newDiv);
+  }
+  // Generate letter labels 
+  let lastNumberLabel = document.querySelector(`.${gridName}__label-${10}`); 
+  for (let i=9; i>=0; i--) {
+    newLabel = document.createElement("div");
+    newLabel.setAttribute("class", `${gridName}__labels ${gridName}__label-${letterArr[i]}`);
+    newLabel.innerHTML = letterArr[i]; 
+    lastNumberLabel.after(newLabel);
+  }
+  if (gridName == "Player-grid") {
+    labelArr = document.querySelectorAll(".Player-grid__labels"); 
+  } else {
+    labelArr = document.querySelectorAll(".Guess-grid__labels")
+  }
+  // Generate buttons 
   let newButton = document.createElement("button");
     for (let i=0; i<labelArr.length; i++) {
       for (let j=10; j>0; j--) {
@@ -16,19 +36,21 @@ const setupGrid = (letterArr, gridName, labelArr) => {
       }
     }
 }
+// Setup both player and guess grids
 
-setupGrid(["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"], "Player-grid", allPlayerLabels);
-setupGrid(["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"], "Guess-grid", allGuessLabels);
+let guessGridParent = document.querySelector(".Guess-grid");
+let playerGridParent = document.querySelector(".Player-grid");
+setupGrid(["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"], "Player-grid", [], playerGridParent);
+setupGrid(["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"], "Guess-grid", [], guessGridParent);
 
-
-// Some variables that are used multiple times in different places. 
+// Some variables grouped together for use below. 
 
 let allPlayerButtons = document.querySelectorAll(".Player-grid__buttons");
 let allGuessButtons = document.querySelectorAll(".Guess-grid__buttons");
 let gameLogPlayer = document.querySelector(".battleship-game__info__log-content-player");
 let gameLogOpponent = document.querySelector(".battleship-game__info__log-content-opponent");
 let playerGrid = document.querySelector(".Player-grid");
-let opponentGrid = document.querySelector(".Guess-grid")
+let opponentGrid = document.querySelector(".Guess-grid");
 let gameInstructions = document.querySelector(".battleship-game__info__header");
 let boardHeaders = document.querySelectorAll(".battleship-game__headers");  
 const startGameButton = document.querySelector(".battleship-game__info__start-game-button"); 
@@ -116,7 +138,7 @@ const handlePlayerGuess = (shipsArr, id, classList) => {
   // 3. If The array length is zero - They have no more ships left - they loose!
   if (shipsArr.length == 0) {
     gameLogPlayer.innerHTML = "<h3> Well Done. You have won Battleship! <br> Your grand prize is: Nothing. </h3>";
-    gameLogOpponent.innerHTML = "";
+    gameLogOpponent.visibility = "hidden";
     playerGrid.style.visibility = "hidden";
     opponentGrid.style.visibility = "hidden";
     gameInstructions.style.visibility = "hidden";

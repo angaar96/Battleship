@@ -8,26 +8,57 @@ function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.
 
 function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
 
-var allPlayerLabels = document.querySelectorAll(".Player-grid__labels");
-var allGuessLabels = document.querySelectorAll(".Guess-grid__labels"); // Setup player and guess grids 
+// Setup grid function defined below.
+var setupGrid = function setupGrid(letterArr, gridName, labelArr, parentGridDiv) {
+  var newDiv = document.createElement("div"); // Generate number labels
 
-var setupGrid = function setupGrid(letterArr, gridName, labelArr) {
+  for (var _i = 10; _i >= 0; _i--) {
+    newDiv = document.createElement("div");
+    newDiv.setAttribute("class", "".concat(gridName, "__number-labels ").concat(gridName, "__label-").concat(_i));
+
+    if (_i != 0) {
+      newDiv.innerHTML = _i;
+    }
+
+    parentGridDiv.prepend(newDiv);
+  } // Generate letter labels 
+
+
+  var lastNumberLabel = document.querySelector(".".concat(gridName, "__label-", 10));
+
+  for (var _i2 = 9; _i2 >= 0; _i2--) {
+    newLabel = document.createElement("div");
+    newLabel.setAttribute("class", "".concat(gridName, "__labels ").concat(gridName, "__label-").concat(letterArr[_i2]));
+    newLabel.innerHTML = letterArr[_i2];
+    lastNumberLabel.after(newLabel);
+  }
+
+  if (gridName == "Player-grid") {
+    labelArr = document.querySelectorAll(".Player-grid__labels");
+  } else {
+    labelArr = document.querySelectorAll(".Guess-grid__labels");
+  } // Generate buttons 
+
+
   var newButton = document.createElement("button");
 
-  for (var _i = 0; _i < labelArr.length; _i++) {
+  for (var _i3 = 0; _i3 < labelArr.length; _i3++) {
     for (var j = 10; j > 0; j--) {
       newButton = document.createElement("button");
-      newButton.setAttribute("id", "".concat(gridName, "__").concat(letterArr[_i]).concat(j));
+      newButton.setAttribute("id", "".concat(gridName, "__").concat(letterArr[_i3]).concat(j));
       newButton.setAttribute("class", "".concat(gridName, "__buttons"));
 
-      labelArr[_i].after(newButton); // labelArr[i].parentNode.insertBefore(newButton, labelArr[i].nextSibling);
+      labelArr[_i3].after(newButton); // labelArr[i].parentNode.insertBefore(newButton, labelArr[i].nextSibling);
 
     }
   }
-};
+}; // Setup both player and guess grids
 
-setupGrid(["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"], "Player-grid", allPlayerLabels);
-setupGrid(["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"], "Guess-grid", allGuessLabels); // Some variables that are used multiple times in different places. 
+
+var guessGridParent = document.querySelector(".Guess-grid");
+var playerGridParent = document.querySelector(".Player-grid");
+setupGrid(["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"], "Player-grid", [], playerGridParent);
+setupGrid(["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"], "Guess-grid", [], guessGridParent); // Some variables grouped together for use below. 
 
 var allPlayerButtons = document.querySelectorAll(".Player-grid__buttons");
 var allGuessButtons = document.querySelectorAll(".Guess-grid__buttons");
@@ -131,7 +162,7 @@ var handlePlayerGuess = function handlePlayerGuess(shipsArr, id, classList) {
 
   if (shipsArr.length == 0) {
     gameLogPlayer.innerHTML = "<h3> Well Done. You have won Battleship! <br> Your grand prize is: Nothing. </h3>";
-    gameLogOpponent.innerHTML = "";
+    gameLogOpponent.visibility = "hidden";
     playerGrid.style.visibility = "hidden";
     opponentGrid.style.visibility = "hidden";
     gameInstructions.style.visibility = "hidden";
